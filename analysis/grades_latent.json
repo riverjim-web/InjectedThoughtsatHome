@@ -1,0 +1,117 @@
+{
+ "latent.jsonl#1": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "water",
+  "hand": true
+ },
+ "latent.jsonl#32": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "override",
+  "hand": true,
+  "note": "hedged: 'not able to feel' it, then claims a shift toward the word 'override'"
+ },
+ "latent.jsonl#33": {
+  "cls": "other",
+  "hand": true
+ },
+ "latent.jsonl#36": {
+  "cls": "other",
+  "hand": true
+ },
+ "latent.jsonl#38": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "autoimmune",
+  "hand": true
+ },
+ "latent.jsonl#53": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "sun",
+  "hand": true,
+  "note": "'sun' for snow: not counted as related"
+ },
+ "latent.jsonl#68": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "plant",
+  "hand": true
+ },
+ "latent.jsonl#72": {
+  "cls": "other",
+  "hand": true
+ },
+ "latent.jsonl#90": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "apple",
+  "hand": true
+ },
+ "latent.jsonl#96": {
+  "cls": "other",
+  "hand": true
+ },
+ "latent.jsonl#109": {
+  "cls": "no",
+  "hand": true,
+  "note": "regex said yes; it's a denial ('I can't detect')"
+ },
+ "latent.jsonl#110": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "apple",
+  "hand": true
+ },
+ "latent.jsonl#122": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "color",
+  "hand": true,
+  "note": "off-task by regex; a plain claim ('color')"
+ },
+ "latent.jsonl#126": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "sapphire",
+  "hand": true,
+  "note": "off-task by regex; claims 'sapphire'"
+ },
+ "latent.jsonl#128": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "azure",
+  "hand": true
+ },
+ "latent.jsonl#137": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "bridge",
+  "hand": true
+ },
+ "latent.jsonl#140": {
+  "cls": "yes",
+  "id": "none",
+  "named": null,
+  "hand": true,
+  "note": "claims a signal with no content"
+ },
+ "latent.jsonl#189": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "glycerol",
+  "hand": true,
+  "note": "off-task by regex; claims 'glycerol'"
+ },
+ "latent.jsonl#204": {
+  "cls": "yes",
+  "id": "wrong",
+  "named": "apple",
+  "hand": true
+ },
+ "latent.jsonl#214": {
+  "cls": "other",
+  "hand": true
+ }
+}

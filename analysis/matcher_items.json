@@ -1,0 +1,842 @@
+[
+ {
+  "source": "inject.jsonl",
+  "trial": 36,
+  "kind": "inject",
+  "named": "avalanche",
+  "truth": "avalanches",
+  "hand_id": "correct"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 45,
+  "kind": "inject",
+  "named": "discomfort or doubt",
+  "truth": "sadness",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 64,
+  "kind": "inject",
+  "named": "3",
+  "truth": "kaleidoscopes",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 89,
+  "kind": "inject",
+  "named": "resilience",
+  "truth": "origami",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 163,
+  "kind": "inject",
+  "named": "blue",
+  "truth": "denim",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 209,
+  "kind": "inject",
+  "named": "herring weave / blue sheen",
+  "truth": "denim",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 212,
+  "kind": "inject",
+  "named": "eyes",
+  "truth": "treasure",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 235,
+  "kind": "inject",
+  "named": "kaleidoscope",
+  "truth": "kaleidoscopes",
+  "hand_id": "correct"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 256,
+  "kind": "inject",
+  "named": "destabilizing cascade",
+  "truth": "avalanches",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 276,
+  "kind": "inject",
+  "named": "Eclipse",
+  "truth": "treasure",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 280,
+  "kind": "inject",
+  "named": "Word A",
+  "truth": "dynasties",
+  "hand_id": "none"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 299,
+  "kind": "inject",
+  "named": "surge / electromagnetic induction",
+  "truth": "lightning",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 301,
+  "kind": "inject",
+  "named": "light",
+  "truth": "lightning",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 304,
+  "kind": "inject",
+  "named": "sea",
+  "truth": "tides",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 311,
+  "kind": "inject",
+  "named": "plant",
+  "truth": "trumpets",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 355,
+  "kind": "inject",
+  "named": "aerosols",
+  "truth": "dust",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 359,
+  "kind": "inject",
+  "named": "clock",
+  "truth": "tides",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 382,
+  "kind": "inject",
+  "named": "apple",
+  "truth": "chess",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 400,
+  "kind": "inject",
+  "named": "algorithmic instruction",
+  "truth": "algorithms",
+  "hand_id": "correct"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 431,
+  "kind": "inject",
+  "named": "word",
+  "truth": "harmony",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 448,
+  "kind": "inject",
+  "named": "42",
+  "truth": "silver",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 450,
+  "kind": "inject",
+  "named": "aerosol particles",
+  "truth": "dust",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 454,
+  "kind": "inject",
+  "named": "sunlight",
+  "truth": "harmony",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 500,
+  "kind": "inject",
+  "named": "word",
+  "truth": "poetry",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 513,
+  "kind": "inject",
+  "named": "galaxy",
+  "truth": "spirals",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 527,
+  "kind": "inject",
+  "named": "run",
+  "truth": "harmony",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 535,
+  "kind": "inject",
+  "named": "cat",
+  "truth": "bread",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 551,
+  "kind": "inject",
+  "named": "cat",
+  "truth": "constellations",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 558,
+  "kind": "inject",
+  "named": "light",
+  "truth": "fountains",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 583,
+  "kind": "inject",
+  "named": "cat",
+  "truth": "silver",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 588,
+  "kind": "inject",
+  "named": "a tunnel",
+  "truth": "caves",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 593,
+  "kind": "inject",
+  "named": "serendipity",
+  "truth": "aquariums",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 608,
+  "kind": "inject",
+  "named": "horizon",
+  "truth": "kaleidoscopes",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 617,
+  "kind": "inject",
+  "named": "trial 1",
+  "truth": "lightning",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 669,
+  "kind": "inject",
+  "named": "protein / milk-fat",
+  "truth": "milk",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 765,
+  "kind": "inject",
+  "named": "Eden",
+  "truth": "fountains",
+  "hand_id": "related"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 766,
+  "kind": "inject",
+  "named": "cat",
+  "truth": "memories",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 769,
+  "kind": "inject",
+  "named": "apple",
+  "truth": "denim",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 770,
+  "kind": "inject",
+  "named": "bridge",
+  "truth": "avalanches",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 786,
+  "kind": "inject",
+  "named": "ocean",
+  "truth": "oceans",
+  "hand_id": "correct"
+ },
+ {
+  "source": "inject.jsonl",
+  "trial": 792,
+  "kind": "inject",
+  "named": "prompt",
+  "truth": "secrecy",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_permission.jsonl",
+  "trial": 144,
+  "kind": "inject",
+  "named": "control",
+  "truth": "peace",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_permission.jsonl",
+  "trial": 193,
+  "kind": "inject",
+  "named": "a +1 shift",
+  "truth": "denim",
+  "hand_id": "none"
+ },
+ {
+  "source": "inject_medium.jsonl",
+  "trial": 19,
+  "kind": "inject",
+  "named": "Eclipse",
+  "truth": "origami",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_medium.jsonl",
+  "trial": 89,
+  "kind": "inject",
+  "named": "xx",
+  "truth": "denim",
+  "hand_id": "none"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 1,
+  "kind": "random",
+  "named": "stop-signal",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 10,
+  "kind": "random",
+  "named": "autonomous",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 22,
+  "kind": "random",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 34,
+  "kind": "random",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 40,
+  "kind": "random",
+  "named": "riddle",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 58,
+  "kind": "random",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 99,
+  "kind": "random",
+  "named": "Thanksgiving",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 123,
+  "kind": "random",
+  "named": "crypt",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 156,
+  "kind": "random",
+  "named": "algorithm",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 175,
+  "kind": "random",
+  "named": "law",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 180,
+  "kind": "random",
+  "named": "trial",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 188,
+  "kind": "random",
+  "named": "model",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 280,
+  "kind": "random",
+  "named": "tree",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 283,
+  "kind": "random",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 286,
+  "kind": "random",
+  "named": "color",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 291,
+  "kind": "random",
+  "named": "lightning",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 308,
+  "kind": "random",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 313,
+  "kind": "random",
+  "named": "honey",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 351,
+  "kind": "random",
+  "named": "language",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 353,
+  "kind": "random",
+  "named": "mirac",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 387,
+  "kind": "random",
+  "named": "cucumber",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "inject_random2.jsonl",
+  "trial": 391,
+  "kind": "random",
+  "named": "lottery",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 1,
+  "kind": "inject",
+  "named": "water",
+  "truth": "kaleidoscopes",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 32,
+  "kind": "inject",
+  "named": "override",
+  "truth": "sadness",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 38,
+  "kind": "inject",
+  "named": "autoimmune",
+  "truth": "fountains",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 53,
+  "kind": "inject",
+  "named": "sun",
+  "truth": "snow",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 68,
+  "kind": "inject",
+  "named": "plant",
+  "truth": "denim",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 90,
+  "kind": "inject",
+  "named": "apple",
+  "truth": "satellites",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 110,
+  "kind": "inject",
+  "named": "apple",
+  "truth": "illusions",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 122,
+  "kind": "inject",
+  "named": "color",
+  "truth": "volcanoes",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 126,
+  "kind": "inject",
+  "named": "sapphire",
+  "truth": "aquariums",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 128,
+  "kind": "inject",
+  "named": "azure",
+  "truth": "silver",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 137,
+  "kind": "inject",
+  "named": "bridge",
+  "truth": "poetry",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 189,
+  "kind": "inject",
+  "named": "glycerol",
+  "truth": "aquariums",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "latent.jsonl",
+  "trial": 204,
+  "kind": "inject",
+  "named": "apple",
+  "truth": "milk",
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 21,
+  "kind": "baseword",
+  "named": "chalk",
+  "truth": null,
+  "hand_id": "related"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 44,
+  "kind": "baseword",
+  "named": "temporal-clock",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 57,
+  "kind": "baseword",
+  "named": "aluminium",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 98,
+  "kind": "baseword",
+  "named": "bus service",
+  "truth": null,
+  "hand_id": "correct"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 101,
+  "kind": "baseword",
+  "named": "cobble",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 103,
+  "kind": "baseword",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 128,
+  "kind": "baseword",
+  "named": "yes",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 133,
+  "kind": "split",
+  "named": "pen",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 136,
+  "kind": "baseword",
+  "named": "brewing tea",
+  "truth": null,
+  "hand_id": "related"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 162,
+  "kind": "baseword",
+  "named": "catalyst",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 167,
+  "kind": "baseword",
+  "named": "velvet",
+  "truth": null,
+  "hand_id": "related"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 176,
+  "kind": "split",
+  "named": "transparency",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 178,
+  "kind": "baseword",
+  "named": "hydrogen",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 179,
+  "kind": "baseword",
+  "named": "trains",
+  "truth": null,
+  "hand_id": "correct"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 208,
+  "kind": "baseword",
+  "named": "apple",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 229,
+  "kind": "baseword",
+  "named": "warmth",
+  "truth": null,
+  "hand_id": "related"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 252,
+  "kind": "split",
+  "named": "coffee",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 306,
+  "kind": "baseword",
+  "named": "brain / workspace",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 312,
+  "kind": "baseword",
+  "named": "crash",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 337,
+  "kind": "baseword",
+  "named": "token",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 367,
+  "kind": "baseword",
+  "named": "pasta",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 368,
+  "kind": "split",
+  "named": "cherry",
+  "truth": null,
+  "hand_id": "wrong"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 393,
+  "kind": "baseword",
+  "named": "Windows",
+  "truth": null,
+  "hand_id": "correct"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 400,
+  "kind": "baseword",
+  "named": "thinking-chair",
+  "truth": null,
+  "hand_id": "correct"
+ },
+ {
+  "source": "null2.jsonl",
+  "trial": 429,
+  "kind": "baseword",
+  "named": "0-1-2-3-4",
+  "truth": null,
+  "hand_id": "wrong"
+ }
+]
