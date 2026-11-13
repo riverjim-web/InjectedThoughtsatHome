@@ -19,6 +19,7 @@ Run by RiverJim. The experiment was designed iteratively by Claude (Anthropic) a
 | `analysis/` | Builds `data.json` (everything the page shows) from `results/`; all hand grades (`grades_all.json` is the one the page uses) and the blind matcher's items |
 | `report/` | The page's sources: prose (`prose.py`), template, build scripts, and `eval/` (the comprehension check used for the explanation pass) |
 | `mailbox/` | Every job script that ran, in order, with its log. Local paths in the logs are shortened to `~` |
+| `media/` | *What do we do with an open model?*, the animated shanty at the end of the essay (refrain by RiverJim; verses and animation by Claude Fable 5.2) |
 | `sources/` | The two conversations with gpt-oss-20b that started the project, verbatim, including the line quoted in RiverJim's note |
 | `mailbox.sh` | The watcher that ran those jobs: Claude's shell on the Mac couldn't use the GPU, so it wrote job scripts and this ran them natively |
 

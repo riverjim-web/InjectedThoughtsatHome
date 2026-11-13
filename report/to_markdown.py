@@ -40,7 +40,7 @@ if hero:
         if prose.get("heroNote"):
             lines += [fill(prose["heroNote"]), ""]
 
-order = ["body-intro", "body-setup", "body-steer-2", "body-answers", "body-yes", "body-later", "body-review", "body-access", "body-cot", "body-leak",
+order = ["body-foreword", "body-intro", "body-setup", "body-steer-2", "body-answers", "body-yes", "body-later", "body-review", "body-access", "body-cot", "body-leak",
          "body-judge", "body-permission", "body-medium", "body-control", "body-meaning", "body-methods"]
 def blocks_md(bl):
     out = []
@@ -55,6 +55,10 @@ def blocks_md(bl):
             out += [f"- {fill(x)}" for x in b["ul"]] + [""]
         elif "note" in b:
             out += [fill(b["note"]), ""]
+        elif "q" in b:
+            out += ["> " + fill(b["q"]), ""]
+        elif "video" in b:
+            out += [fill(b.get("caption", "")) + f" (video: {b['video']})", ""]
         elif "details" in b:
             out += [f"### {fill(b['details'])}", ""] + blocks_md(b.get("blocks", []))
     return out
@@ -74,6 +78,10 @@ for sec in order:
             lines += [f"- {fill(x)}" for x in b["ul"]] + [""]
         elif "note" in b:
             lines += [fill(b["note"]), ""]
+        elif "q" in b:
+            lines += ["> " + fill(b["q"]), ""]
+        elif "video" in b:
+            lines += [fill(b.get("caption", "")) + f" (video: {b['video']})", ""]
     if sec == "body-access" and data.get("concept_table"):
         lines += ["### How well each concept vector is identified", "", fill(prose.get("conceptsSub", "")), "",
                   "| Concept | Average rank of 36 | Picked first | Rank, asked about injected thought | Main-run claims | Blind reader (0.3+) |",

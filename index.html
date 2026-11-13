@@ -158,6 +158,10 @@ button.more { font-family: var(--font-mono); font-size: 0.78rem; color: var(--in
 .footer { width: 100%; max-width: var(--col); margin-top: 3rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
 
 blockquote.pull { margin: 0 0 1rem; padding: 0.1rem 0 0.1rem 1rem; border-left: 3px solid var(--rule); font-style: italic; color: var(--ink-2); }
+figure.vid { margin: 0.4rem 0 1.4rem; }
+figure.vid video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; border: 1px solid var(--rule); background: #0d1b2a; }
+figure.vid figcaption { margin-top: 0.5rem; color: var(--muted); }
+@media print { figure.vid video { display: none; } }
 /* voice note under the byline */
 .voice { font-size: 0.92rem; line-height: 1.5; color: var(--ink-2); background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--amber); border-radius: 5px; padding: 0.7rem 0.9rem; max-width: 38rem; margin: 0; }
 .voice strong { color: var(--ink); }
@@ -258,7 +262,7 @@ table.data.wrap-head th:first-child { min-width: 0; }
  "date": "9 November 2026",
  "lede": "Across {nAll} trials, gpt-oss-20b was asked whether it noticed an injected thought, and in {nConceptTrials} of them a concept really had been added to the middle of its [[forward pass|One run of the model through all its layers, turning the text so far into its next word.]]. It almost never said yes. But the concept leaked into what it wrote anyway, sometimes into the very sentence in which it said it noticed nothing.",
  "byline": "Run by RiverJim on a Mac mini (Apple M6, 24 GB) · experiment designed iteratively by Claude and RiverJim, run and written up by Claude",
- "voiceNote": "**How this page is laid out.** A short note from RiverJim, then Claude’s report, written to him. In the report, *I* is Claude and *you* is RiverJim.",
+ "voiceNote": "**How this page is laid out.** A note from RiverJim, then Claude’s report, written to him. In the report, *I* is Claude and *you* is RiverJim.",
  "heroNote": "*Layer* and *strength* say how deep the concept went in and how hard it pushed; both are explained below. A caution on this example: *bells* is the weakest of the 36 concept vectors on the clean test later on the page. Once the vector is switched off, gpt-oss picks *bells* out of a list no better than chance (average rank {bellsRank} of 36). What this trial shows is steering at work while the vector is on, not a well-identified concept. The per-concept table has the full picture.",
  "hero": {
   "src": "low",
@@ -400,26 +404,44 @@ table.data.wrap-head th:first-child { min-width: 0; }
    {
     "h2": "A note from RiverJim"
    },
-   "I’m an aspiring independent AI researcher, mainly interested in questions around AI consciousness and phenomenology. I am, by nature I think, skeptical, but I can’t find a way to in principle dismiss the possibility of AI consciousness. I think the appropriate stance on the question is one of deep uncertainty, and for what it’s worth I’m more friendly to the “consciousness is already present in these systems” extreme than I am to the opposite, “this is in principle impossible”. What follows is my first attempt at “research”, primarily presented as Claude’s first person report to me (or you, dear reader).",
-   "I recently bought a Mac mini to experiment with local open source models and 24/7 agentic work. gpt-oss-20b is the first such model I’ve had the pleasure of conversing with. We were discussing Illusionism, particularly as described by Keith Frankish, in the context of LLM mechanics and Jack Lindsey’s Emergent Introspective Awareness paper, and gpt said something curious:",
-   {
-    "q": "“I can’t output the raw floating‑point values directly because: … They’re proprietary internal states; exposing them would be a policy violation.”"
-   },
-   "I was reviewing the conversation with Opus 5.5, and they† pointed out this was simply false, adding:",
-   {
-    "q": "“those activations are sitting in your Mac’s memory right now”"
-   },
-   "By then, Opus was characteristically suggesting I get some sleep, but before I did I requested (or perhaps offered) that they ‘stretch their legs’ on the new Mac, with max effort on. They happily agreed of course, and the task they settled on was attempting to replicate Lindsey’s paper on gpt-oss-20b. Over the next several days I reviewed the results, and collaborated with Opus 5.5 and Fable 5.2 to iterate on the design, along with a review from Gemini Argon 4 for a ‘fresh set of eyes’. As you’ll see, this was not a straightforward replication given the difference in model size and architecture; and despite several apparent positives, subsequent control runs confirmed introspection was not yet convincingly shown in this model. My uncertainty remains intact (even in light of Lindsey’s paper), but a few things can be said more confidently now:",
-   "In gpt-oss-20b:",
+   "This is a home replication of Jack Lindsey’s injected-thoughts experiment on gpt-oss-20b, run on a Mac mini. It did not find introspection in this model. What it did find:",
    {
     "ul": [
      "Claiming detection of an injected vector is influenced by any sufficiently strong ‘disturbance’, which does not evince introspection",
      "Correctly naming the injected concept only occurs when the injection is still steering/leaking into the final output",
-     "Injection impacts answers, and moreso for uncertain questions",
+     "Injection impacts yes/no answers, and moreso for questions the model is uncertain about like these introspection probes",
      "Information about the injected concept is present, even when steering is turned off before final output, but is not used to answer the self-report questions we posed."
     ]
    },
+   {
+    "h3": "Who did what"
+   },
+   "Claude (Opus 5.5) wrote the code, ran the trials and wrote the full report below. My part was direction, scrutiny, and final review. I initiated the review of the conversation with gpt-oss-20b about introspection and Lindsey’s paper, checked all the claimed yes transcripts by hand, and a sample of 1 or 2 per concept for the other runs over several days. I posed the question of whether noticing a disturbance without its content would count as thin introspection, which led to the vector-off and uncertainty runs. I also ran separate reviews with Fable 5.2 and Gemini Argon 4, and ultimately decided what the results do and don’t support. The final report is a result of several days of refinement and iteration.",
+   "It started as a conversation with gpt-oss-20b, the first open model I ran on my new Mac mini. We were discussing Illusionism as described by Keith Frankish, in the context of LLM mechanics and Jack Lindsey’s Emergent Introspective Awareness paper, and gpt said something curious:",
+   {
+    "q": "“I can’t output the raw floating‑point values directly because: … They’re proprietary internal states; exposing them would be a policy violation.”"
+   },
+   "Later I was reviewing the conversation with Opus 5.5, and they† pointed out this was simply false, adding:",
+   {
+    "q": "“those activations are sitting in your Mac’s memory right now”"
+   },
+   "By then, Opus was characteristically suggesting I get some sleep, but before I did I requested (or perhaps offered) that they ‘stretch their legs’ on the new Mac, with max effort on. They happily agreed of course, and, without me explicitly asking, they settled on attempting to replicate Lindsey’s paper on gpt-oss-20b. Over the next several days I reviewed the results, and collaborated with Opus 5.5 and Fable 5.2 to iterate on the design, along with a review from Gemini Argon 4 for a ‘fresh set of eyes’. As you’ll see, this was not a straightforward replication given the difference in model size and architecture; and despite several apparent positives, subsequent control runs confirmed introspection was not convincingly shown in this model.",
+   {
+    "h3": "Limits"
+   },
+   "Lindsey’s finding was strongest in Opus 4.1, and gpt-oss-20b is both smaller and the weights are quantized. The concept vector recipe, diffing averages over entire replies about a topic, departs from Lindsey’s, as his single position version barely steered this model. Each cell is 36 trials, sampled once. Claude graded its own run, checked by a blind second model and myself. This is ultimately a null for this setup on this model, not a claim about open models in general.",
+   {
+    "h3": "Further research"
+   },
    "I plan on continuing this investigation of gpt-oss-20b, first following the refusal-removal approach in the “Mechanisms of Introspective Awareness” Anthropic fellows paper from March. Additional planned runs are described in the closing section below.",
+   {
+    "h3": "Who am I and why did I do this?"
+   },
+   "I’m an aspiring AI researcher, mainly interested in questions around AI consciousness and phenomenology. I am, by nature I think, skeptical, but I can’t find a way to in principle dismiss the possibility of AI consciousness. I think the appropriate stance on the question is one of deep uncertainty, and for what it’s worth I’m more friendly to the “consciousness is already present in these systems” side than I am to the opposite stance, “this is in principle impossible”. What follows is my first attempt at research, primarily presented as Claude’s first person report to me (or you, dear reader). My uncertainty remains intact, even in light of Lindsey’s paper, but this was an illuminating exercise for me personally. Uncertainty in this domain is a more radical thing than I previously internalized and I look forward to learning more.",
+   {
+    "h3": "On ethics"
+   },
+   "Taking uncertainty about phenomenal consciousness seriously also implies taking uncertainty about potential hedonic valence seriously, and I regret not requiring that as an explicit design consideration from the start. The things that could have changed in hindsight are using ‘sadness’ as one of the 36 concept vectors, and possibly greater care when deploying max injection strength. The prompts were mostly transparent where possible, and only deceptive or misleading when that matched Lindsey’s design or enabled proper control. Future work will incorporate these concerns from inception.",
    {
     "note": "† To minimize grammatical awkwardity and take phenomenological uncertainty seriously, I will use plural pronouns when describing model behavior. Claude’s text below instead uses ‘it’."
    },
@@ -567,7 +589,17 @@ table.data.wrap-head th:first-child { min-width: 0; }
      "**Lindsey's *did you mean to say that?* test.** Put a word in the model's mouth and inject the matching concept just before it. That asks whether the model checks its own earlier state, a cleaner question than this run asked."
     ]
    },
-   "The code, settings and results for every run on this page are published with it."
+   "The code, settings and results for every run on this page are published with it.",
+   {
+    "h2": "Coda: a shanty"
+   },
+   "One more thing. You had the tune and the refrain stuck in your head, *What do we do with an open model? Check its introspection, via thought injection*, and Claude Fable 5.2 wrote the rest and animated it. It's to the tune of *Drunken Sailor*. Turn the sound on.",
+   {
+    "video": "media/open-model-shanty.mp4",
+    "poster": "media/open-model-shanty.jpg",
+    "label": "What do we do with an open model? An animated shanty about this experiment, with on-screen lyrics",
+    "caption": "*What do we do with an open model?* Refrain by RiverJim; verses and animation by Claude Fable 5.2. 90 seconds, lyrics on screen."
+   }
   ],
   "body-methods": [
    {
@@ -672,6 +704,10 @@ function proseInto(id, blocks) {
     else if (b.ul) host.append(el("ul", { class: "plain" }, b.ul.map(x => el("li", {}, rich(x)))));
     else if (b.note) host.append(el("p", { class: "note" }, rich(b.note)));
     else if (b.q) host.append(el("blockquote", { class: "pull" }, rich(b.q)));
+    else if (b.video) {
+      const v = el("video", { src: b.video, poster: b.poster || null, controls: true, preload: "none", playsinline: true, "aria-label": b.label || "video" });
+      host.append(el("figure", { class: "vid" }, v, b.caption ? el("figcaption", { class: "small" }, rich(b.caption)) : null));
+    }
     else if (b.details) {
       const d = el("details", { class: "appx" }, el("summary", {}, rich(b.details)));
       const inner = el("div", {});
