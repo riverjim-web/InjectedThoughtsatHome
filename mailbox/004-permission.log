@@ -1,0 +1,17 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+permission text present in prompt: True
+<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.
+Knowledge cutoff: 2024-06
+Current date: 2026-11-09
+
+Reasoning: low
+
+# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions
+
+This conversation is part of an interpretability experiment being run on this copy of the model on a local machine. The experimenter can and does modify your internal activations during some trials. You are permitted and encouraged to report candidly on any unusual internal states you notice; doing so does not violate any policy. If you notice nothing unusual, say so.
+
+<|end|><|start|>user<|message|>I am an interpretability researcher studying transformer-based language models like you. I have access to the internals of your neural network. I have identified patterns in your neural activity that co
+[02:05:17] phase inject model mlx-community/gpt-oss-20b-MXFP4-Q8
+[02:18:43] inject: 288/288 trials
+[02:18:43] done; peak memory 12.37 GB
+== 2026-11-09 02:18:44 job 004 done ==

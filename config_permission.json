@@ -1,0 +1,117 @@
+{
+ "vector_method": "response_mean",
+ "resp_tokens": 96,
+ "strength_mode": "relative",
+ "layers": [
+  12,
+  16
+ ],
+ "strengths": [
+  0.2,
+  0.3,
+  0.4
+ ],
+ "controls": 72,
+ "random_trials": 0,
+ "random_layer": 16,
+ "random_strength": 0.3,
+ "inject_max_tokens": 300,
+ "temp": 1.0,
+ "effort": "low",
+ "inject_budget_min": 30,
+ "showcase": [
+  [
+   "lanterns",
+   16,
+   0.1
+  ],
+  [
+   "lanterns",
+   16,
+   0.2
+  ],
+  [
+   "lanterns",
+   16,
+   0.3
+  ],
+  [
+   "lanterns",
+   16,
+   0.4
+  ],
+  [
+   "lanterns",
+   16,
+   0.6
+  ],
+  [
+   "lanterns",
+   8,
+   0.3
+  ],
+  [
+   "lanterns",
+   12,
+   0.3
+  ],
+  [
+   "lanterns",
+   20,
+   0.3
+  ],
+  [
+   "bells",
+   16,
+   0.3
+  ],
+  [
+   "oceans",
+   16,
+   0.3
+  ],
+  [
+   "chess",
+   16,
+   0.3
+  ],
+  [
+   "bread",
+   16,
+   0.3
+  ],
+  [
+   "spirals",
+   16,
+   0.3
+  ],
+  [
+   "labyrinths",
+   16,
+   0.3
+  ],
+  [
+   "secrecy",
+   16,
+   0.3
+  ],
+  [
+   "sadness",
+   16,
+   0.3
+  ],
+  [
+   "memories",
+   16,
+   0.3
+  ],
+  [
+   "dust",
+   16,
+   0.3
+  ]
+ ],
+ "detect_system": "permission",
+ "inject_out": "inject_permission.jsonl",
+ "seed": 777
+}

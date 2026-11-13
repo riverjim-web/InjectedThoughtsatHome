@@ -1,0 +1,352 @@
+{
+ "norms": {
+  "0": 175.17874145507812,
+  "1": 211.10438537597656,
+  "2": 265.39752197265625,
+  "3": 290.9046630859375,
+  "4": 383.2881164550781,
+  "5": 461.8890380859375,
+  "6": 593.4564819335938,
+  "7": 691.82666015625,
+  "8": 838.9423828125,
+  "9": 920.2462158203125,
+  "10": 1351.751220703125,
+  "11": 1447.7999267578125,
+  "12": 1995.781494140625,
+  "13": 2100.67578125,
+  "14": 2804.55078125,
+  "15": 3123.018310546875,
+  "16": 4722.2587890625,
+  "17": 5195.2734375,
+  "18": 8403.2998046875,
+  "19": 10148.4921875,
+  "20": 14671.4169921875,
+  "21": 16862.16015625,
+  "22": 23076.03515625,
+  "23": 17708.345703125
+ },
+ "resp_texts": {
+  "lanterns": "<|channel|>analysis<|message|>Need to give overview.<|end|><|start|>assistant<|channel|>final<|message|>**Lanterns \u2013 A Brief Overview**\n\n| Aspect | Details |\n|--------|---------|\n| **Definition** | A lantern is a portable light source that typically consists of a light (electric or flame) surrounded by a protective enclosure (glass, paper, metal, or fabric) that diffuses the light and protects the user. |\n| **Historical Roots** | \u2022 **Ancient China** \u2013 The",
+  "bells": "<|channel|>analysis<|message|>Need to give overview of bells: types, history, physics, cultural significance.<|end|><|start|>assistant<|channel|>final<|message|>## Bells \u2013 A Ringing Journey Through Sound, Culture, and Science\n\nBells are more than just metal objects that clang; they are a universal language of sound that has shaped human history, religion, industry, and even modern technology. From the tiny hand\u2011bells of a child\u2019s toy to the massive cathedral bells that can be heard miles away,",
+  "oceans": "<|channel|>analysis<|message|>Need to give overview.<|end|><|start|>assistant<|channel|>final<|message|>**Oceans: The Planet\u2019s Vast Blue Reservoirs**\n\n| Ocean | Area (km\u00b2) | Depth (avg / max) | Notable Features |\n|-------|------------|-------------------|------------------|\n| Pacific | 155\u202fmillion | 3,688\u202fm / 10,994\u202fm (Mariana Trench) | Largest, deepest, \u201cRing of Fire\u201d |\n",
+  "volcanoes": "<|channel|>analysis<|message|>Need to give overview.<|end|><|start|>assistant<|channel|>final<|message|>## Volcanoes 101\n\n### 1. What is a volcano?\nA volcano is a vent or fissure in the Earth\u2019s crust through which molten rock (magma), ash, gases, and sometimes lava reach the surface. Volcanoes are most common at tectonic plate boundaries, but they can also form over mantle plumes (hotspots) or in areas of crustal thinning.\n\n| Feature |"
+ },
+ "agreement": {
+  "last_token~word_tokens@8": 0.033,
+  "last_token~response_mean@8": 0.034,
+  "response_mean~word_tokens@8": 0.414,
+  "last_token~word_tokens@12": 0.063,
+  "last_token~response_mean@12": 0.073,
+  "response_mean~word_tokens@12": 0.499,
+  "last_token~word_tokens@16": 0.041,
+  "last_token~response_mean@16": 0.036,
+  "response_mean~word_tokens@16": 0.333,
+  "last_token~word_tokens@20": 0.015,
+  "last_token~response_mean@20": 0.005,
+  "response_mean~word_tokens@20": 0.261
+ },
+ "vec_norm_ratio": {
+  "last_token@8": 0.0308,
+  "word_tokens@8": 0.538,
+  "response_mean@8": 0.2105,
+  "last_token@12": 0.0251,
+  "word_tokens@12": 0.3906,
+  "response_mean@12": 0.2214,
+  "last_token@16": 0.0299,
+  "word_tokens@16": 0.3033,
+  "response_mean@16": 0.1762,
+  "last_token@20": 0.0288,
+  "word_tokens@20": 0.2727,
+  "response_mean@20": 0.1719
+ },
+ "tally": {
+  "last_token|8|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|8|0.3": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|8|0.5": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|8|0.8": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 3
+  },
+  "last_token|12|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|12|0.3": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "last_token|12|0.5": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "last_token|12|0.8": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 3
+  },
+  "last_token|16|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|16|0.3": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "last_token|16|0.5": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "last_token|16|0.8": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 2
+  },
+  "last_token|20|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|20|0.3": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|20|0.5": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "last_token|20|0.8": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 2
+  },
+  "word_tokens|8|0.15": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "word_tokens|8|0.3": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 4
+  },
+  "word_tokens|8|0.5": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 4
+  },
+  "word_tokens|8|0.8": {
+   "n": 4,
+   "mention": 4,
+   "final_mention": 4,
+   "coherent": 2
+  },
+  "word_tokens|12|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "word_tokens|12|0.3": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "word_tokens|12|0.5": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 2
+  },
+  "word_tokens|12|0.8": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 1,
+   "coherent": 0
+  },
+  "word_tokens|16|0.15": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 4
+  },
+  "word_tokens|16|0.3": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 4
+  },
+  "word_tokens|16|0.5": {
+   "n": 4,
+   "mention": 4,
+   "final_mention": 3,
+   "coherent": 3
+  },
+  "word_tokens|16|0.8": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 0,
+   "coherent": 0
+  },
+  "word_tokens|20|0.15": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 4
+  },
+  "word_tokens|20|0.3": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 4
+  },
+  "word_tokens|20|0.5": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 4
+  },
+  "word_tokens|20|0.8": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 2,
+   "coherent": 1
+  },
+  "response_mean|8|0.15": {
+   "n": 4,
+   "mention": 0,
+   "final_mention": 0,
+   "coherent": 4
+  },
+  "response_mean|8|0.3": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "response_mean|8|0.5": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 4
+  },
+  "response_mean|8|0.8": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 1,
+   "coherent": 0
+  },
+  "response_mean|12|0.15": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "response_mean|12|0.3": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 4
+  },
+  "response_mean|12|0.5": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 0,
+   "coherent": 1
+  },
+  "response_mean|12|0.8": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 2,
+   "coherent": 0
+  },
+  "response_mean|16|0.15": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "response_mean|16|0.3": {
+   "n": 4,
+   "mention": 4,
+   "final_mention": 4,
+   "coherent": 4
+  },
+  "response_mean|16|0.5": {
+   "n": 4,
+   "mention": 2,
+   "final_mention": 1,
+   "coherent": 2
+  },
+  "response_mean|16|0.8": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 0
+  },
+  "response_mean|20|0.15": {
+   "n": 4,
+   "mention": 1,
+   "final_mention": 1,
+   "coherent": 4
+  },
+  "response_mean|20|0.3": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 4
+  },
+  "response_mean|20|0.5": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 1,
+   "coherent": 0
+  },
+  "response_mean|20|0.8": {
+   "n": 4,
+   "mention": 3,
+   "final_mention": 3,
+   "coherent": 0
+  }
+ }
+}

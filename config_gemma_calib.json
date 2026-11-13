@@ -1,0 +1,5 @@
+{"model": "mlx-community/gemma-4-26b-a4b-it-4bit", "thinking": true, "temp": 1.0, "top_p": 0.95, "top_k": 64,
+ "calib2_methods": ["last_token", "response_mean"],
+ "calib2_concepts": ["lanterns", "bells", "oceans", "volcanoes"],
+ "calib2_layers": [10, 15, 20, 25], "calib2_alphas": [0.1, 0.2, 0.3, 0.5],
+ "calib2_n_baseline": 40, "calib2_resp_tokens": 96, "showcase_max_tokens": 400}

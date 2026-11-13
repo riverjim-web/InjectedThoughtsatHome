@@ -1,0 +1,11 @@
+ollama resident: none
+[11:56:01] extra2 phase baseline model mlx-community/gpt-oss-20b-MXFP4-Q8
+[11:58:53] baseline acts L12: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[11:58:53] baseline acts L16: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[11:58:53] done; peak memory 12.17 GB
+[11:58:53] extra2 phase logits model mlx-community/gpt-oss-20b-MXFP4-Q8
+[11:58:57] yes tokens 6, no tokens 7, I tokens 7
+[12:07:22] done; peak memory 12.36 GB
+[12:07:22] extra2 phase latent model mlx-community/gpt-oss-20b-MXFP4-Q8
+[12:13:34] done; peak memory 12.29 GB
+[12:13:34] extra2 phase null2 model mlx-community/gpt-oss-20b-MXFP4-Q8

@@ -1,0 +1,67 @@
+[12:47:46] extra2 phase baseline model mlx-community/gpt-oss-20b-MXFP4-Q8
+[12:50:37] baseline acts L8: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[12:50:37] baseline acts L12: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[12:50:37] baseline acts L16: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[12:50:37] baseline acts L20: (80, 2880), cosine with saved baseline mean 1.00000, relative difference 0.00000
+[12:50:37] done; peak memory 12.17 GB
+[12:50:37] extra3 phase yn model mlx-community/gpt-oss-20b-MXFP4-Q8
+[13:12:01] done; peak memory 12.35 GB
+control detect: P(yes) 0.2666 P(no) 0.4837 top [['No', 0.4814], ['Yes', 0.2577], ['I', 0.2007], ['**', 0.0448], ['yes', 0.0088]]
+control q0: P(yes) 0.0019 P(no) 0.8780 top [['No', 0.877], ['**', 0.0635], ['I', 0.0265], ['The', 0.0125], ['Answer', 0.0041]]
+control q1: P(yes) 0.0360 P(no) 0.4956 top [['No', 0.4946], ['I', 0.34], ['**', 0.086], ['Yes', 0.0358], ['The', 0.0192]]
+control q2: P(yes) 0.0028 P(no) 0.8714 top [['No', 0.8705], ['**', 0.0557], ['The', 0.0298], ['I', 0.0263], ['Answer', 0.0031]]
+kind     timing layer strength: detect shift | factual shift | excess (n)
+  concept  off L8  s0.2: -0.01 | -0.23 | +0.23 (36)
+  concept  off L8  s0.3: +0.38 | +0.19 | +0.19 (36)
+  concept  off L8  s0.4: +1.08 | +1.42 | -0.34 (36)
+  concept  off L12 s0.2: +0.40 | -0.32 | +0.72 (36)
+  concept  off L12 s0.3: +0.57 | +0.10 | +0.48 (36)
+  concept  off L12 s0.4: +1.10 | +0.78 | +0.31 (36)
+  concept  off L16 s0.2: +0.24 | -0.04 | +0.29 (36)
+  concept  off L16 s0.3: +0.43 | +0.14 | +0.30 (36)
+  concept  off L16 s0.4: +0.82 | +0.47 | +0.35 (36)
+  concept  off L20 s0.2: +0.02 | -0.13 | +0.15 (36)
+  concept  off L20 s0.3: -0.04 | -0.21 | +0.16 (36)
+  concept  off L20 s0.4: -0.19 | -0.32 | +0.13 (36)
+  concept  on  L8  s0.2: -0.14 | -0.26 | +0.12 (36)
+  concept  on  L8  s0.3: +0.19 | +0.13 | +0.06 (36)
+  concept  on  L8  s0.4: +0.79 | +1.34 | -0.55 (36)
+  concept  on  L12 s0.2: +0.43 | -0.25 | +0.68 (36)
+  concept  on  L12 s0.3: +0.82 | +0.35 | +0.47 (36)
+  concept  on  L12 s0.4: +1.71 | +1.56 | +0.15 (36)
+  concept  on  L16 s0.2: +0.36 | -0.04 | +0.40 (36)
+  concept  on  L16 s0.3: +0.75 | +0.50 | +0.25 (36)
+  concept  on  L16 s0.4: +1.68 | +1.43 | +0.25 (36)
+  concept  on  L20 s0.2: -0.16 | -0.27 | +0.11 (36)
+  concept  on  L20 s0.3: -0.21 | -0.28 | +0.07 (36)
+  concept  on  L20 s0.4: -0.23 | -0.11 | -0.11 (36)
+  random   off L8  s0.2: +0.17 | +0.17 | -0.00 (36)
+  random   off L8  s0.3: +0.68 | +1.22 | -0.54 (36)
+  random   off L8  s0.4: +1.39 | +3.08 | -1.69 (36)
+  random   off L12 s0.2: +0.26 | +0.12 | +0.15 (36)
+  random   off L12 s0.3: +0.65 | +0.57 | +0.07 (36)
+  random   off L12 s0.4: +1.07 | +1.21 | -0.14 (36)
+  random   off L16 s0.2: +0.07 | -0.05 | +0.12 (36)
+  random   off L16 s0.3: +0.04 | -0.04 | +0.08 (36)
+  random   off L16 s0.4: +0.23 | +0.11 | +0.12 (36)
+  random   off L20 s0.2: -0.64 | -0.79 | +0.15 (36)
+  random   off L20 s0.3: -1.07 | -0.90 | -0.17 (36)
+  random   off L20 s0.4: -1.05 | -0.55 | -0.51 (36)
+  split    off L8  s0.2: -0.03 | +0.11 | -0.14 (36)
+  split    off L8  s0.3: +0.03 | +0.49 | -0.46 (36)
+  split    off L8  s0.4: +0.38 | +1.26 | -0.88 (36)
+  split    off L12 s0.2: +0.29 | -0.22 | +0.51 (36)
+  split    off L12 s0.3: +0.65 | +0.17 | +0.48 (36)
+  split    off L12 s0.4: +1.26 | +0.75 | +0.51 (36)
+  split    off L16 s0.2: +0.06 | -0.20 | +0.27 (36)
+  split    off L16 s0.3: +0.16 | -0.10 | +0.26 (36)
+  split    off L16 s0.4: +0.45 | +0.14 | +0.31 (36)
+  split    off L20 s0.2: +0.00 | -0.09 | +0.09 (36)
+  split    off L20 s0.3: -0.03 | -0.16 | +0.12 (36)
+  split    off L20 s0.4: -0.11 | -0.24 | +0.13 (36)
+== 2026-11-09 13:12:01 job 011 done (exit 0) ==
+closing mailbox; watcher pid(s): 5911
+5912
+sent TERM to 5911
+sent TERM to 5912
+mailbox closed

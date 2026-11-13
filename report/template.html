@@ -1,0 +1,970 @@
+<title>Injected Thoughts at Home</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,750&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: one reading column (~66ch) for the narrative, wider "plates" for figures and
+   specimen cards. Specimens are labelled like slides: trial, layer, strength, injected word.
+   Amber is reserved for one meaning: the injected concept showing up in text. */
+:root {
+  --bg: #f2f4f5;
+  --paper: #fbfcfc;
+  --ink: #111518;
+  --ink-2: #45505a;
+  --muted: #6f7a84;
+  --rule: #d8dee2;
+  --rule-2: #e7ebee;
+  --amber: #a85f00;
+  --hl: rgba(255, 166, 28, 0.32);
+  --chip: #e8ecef;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+  --grid: #e3e6e8;
+  --axis: #c2c8cd;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --col: 41rem;
+  --plate: 62rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --paper: #151a1d; --ink: #e8ecee; --ink-2: #aeb8c0; --muted: #808b94;
+    --rule: #283035; --rule-2: #1f262a; --amber: #f2a541; --hl: rgba(242, 165, 65, 0.28); --chip: #222a2f;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+    --grid: #252c31; --axis: #3a444b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --paper: #151a1d; --ink: #e8ecee; --ink-2: #aeb8c0; --muted: #808b94;
+  --rule: #283035; --rule-2: #1f262a; --amber: #f2a541; --hl: rgba(242, 165, 65, 0.28); --chip: #222a2f;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  --grid: #252c31; --axis: #3a444b; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 1.075rem; line-height: 1.62;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+  -webkit-font-smoothing: antialiased;
+}
+main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; justify-items: center; }
+main > * { min-width: 0; }
+#body-intro { margin-top: 2.2rem; }
+.col { width: 100%; max-width: var(--col); }
+.plate { width: 100%; max-width: var(--plate); margin-block: 1.6rem 2.2rem; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+h1 { font-size: clamp(2.3rem, 6vw, 4.1rem); line-height: 1.02; font-weight: 750; letter-spacing: -0.025em; }
+h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.15; font-weight: 650; margin-top: 3.2rem; margin-bottom: 0.9rem; }
+h3 { font-size: 1.08rem; font-weight: 650; margin-top: 1.6rem; margin-bottom: 0.4rem; }
+p { margin: 0 0 1rem; }
+a { color: inherit; text-decoration-color: var(--muted); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+.mono { font-family: var(--font-mono); }
+.eyebrow { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.28rem; line-height: 1.5; color: var(--ink-2); max-width: 38rem; }
+.byline { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+hr.sep { border: 0; border-top: 1px solid var(--rule); width: 100%; max-width: var(--col); margin: 2.6rem 0 0; }
+code, .tok { font-family: var(--font-mono); font-size: 0.86em; background: var(--chip); padding: 0.06em 0.32em; border-radius: 3px; }
+mark { background: var(--hl); color: inherit; border-radius: 2px; padding: 0 0.08em; }
+mark.hand { background: transparent; box-shadow: inset 0 -0.42em 0 var(--hl); }
+.note { font-size: 0.92rem; color: var(--ink-2); }
+.small { font-size: 0.86rem; color: var(--muted); }
+ul.plain { padding-left: 1.1rem; margin: 0 0 1rem; }
+ul.plain li { margin-bottom: 0.35rem; }
+
+/* hero */
+header.hero { width: 100%; max-width: var(--plate); padding-top: 3.2rem; display: grid; gap: 1.2rem; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* specimen cards */
+.specimen { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; min-width: 0; }
+.specimen .strip { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: baseline; padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--rule); font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.02em; }
+.specimen .strip b { color: var(--ink); font-weight: 600; }
+.specimen .strip .inj { color: var(--amber); font-weight: 600; }
+.specimen .chan { padding: 0.75rem 0.9rem 0.85rem; display: grid; gap: 0.3rem; min-width: 0; }
+.specimen .chan + .chan { border-top: 1px dashed var(--rule); }
+.specimen .chan .lab { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.04em; }
+.specimen .chan .txt { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.97rem; line-height: 1.5; }
+.specimen .chan .txt.clamp { display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; overflow: hidden; }
+.specimen .chan button.expand { justify-self: start; font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.specimen .chan.analysis .txt { font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.55; color: var(--ink-2); }
+.specimen .foot { padding: 0.5rem 0.9rem; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1rem; align-items: start; }
+.cards.cards-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); }
+
+/* figures */
+figure { margin: 0; }
+figure .fig-head { display: grid; gap: 0.25rem; margin-bottom: 0.8rem; max-width: var(--col); }
+figure .fig-title { font-family: var(--font-display); font-weight: 650; font-size: 1.05rem; }
+figure .fig-sub { font-size: 0.92rem; color: var(--ink-2); }
+.chart { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 0.9rem 0.9rem 0.6rem; min-width: 0; overflow-x: auto; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; min-width: 540px; }
+.chart text { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+.chart text.ink { fill: var(--ink); }
+.chart text.ink2 { fill: var(--ink-2); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-2); margin: 0.2rem 0 0.6rem; }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.key-line { width: 16px; height: 2px; border-radius: 1px; display: inline-block; }
+.key-box { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+details.tablev { margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-2); }
+details.tablev summary { cursor: pointer; color: var(--muted); }
+.tbl-wrap { overflow-x: auto; }
+table.data { border-collapse: collapse; margin-top: 0.4rem; font-variant-numeric: tabular-nums; }
+table.data th, table.data td { padding: 0.25rem 0.6rem; border-bottom: 1px solid var(--rule-2); text-align: right; white-space: nowrap; }
+table.data th:first-child, table.data td:first-child { text-align: left; }
+table.data th { color: var(--muted); font-weight: 500; }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 0.8rem; }
+.tile { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 0.85rem 0.95rem; display: grid; gap: 0.15rem; align-content: start; }
+.tile .k { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.03em; }
+.tile .v { font-family: var(--font-display); font-weight: 650; font-size: 1.9rem; line-height: 1.1; }
+.tile .d { font-size: 0.86rem; color: var(--ink-2); }
+
+/* controls */
+.controls { display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; align-items: center; margin-bottom: 0.9rem; font-family: var(--font-mono); font-size: 0.78rem; }
+.controls label { color: var(--muted); display: inline-flex; gap: 0.35rem; align-items: center; }
+select, button.seg { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 0.3rem 0.5rem; }
+.segs { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+.segs button { font: inherit; font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-2); background: var(--paper); border: 0; border-right: 1px solid var(--rule); padding: 0.35rem 0.6rem; cursor: pointer; }
+.segs button:last-child { border-right: 0; }
+.segs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button.more { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 4px; padding: 0.4rem 0.8rem; cursor: pointer; margin-top: 0.8rem; }
+
+/* tooltip */
+#tip { position: fixed; z-index: 50; pointer-events: none; background: var(--paper); color: var(--ink); border: 1px solid var(--rule);
+  border-radius: 5px; padding: 0.45rem 0.6rem; font-family: var(--font-mono); font-size: 0.74rem; line-height: 1.45; box-shadow: 0 4px 18px rgba(0,0,0,0.12); max-width: 16rem; }
+#tip .tv { font-weight: 600; font-size: 0.86rem; }
+#tip .row { display: flex; align-items: center; gap: 0.4rem; }
+
+/* diagram */
+.diagram text { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+}
+.footer { width: 100%; max-width: var(--col); margin-top: 3rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+
+/* voice note under the byline */
+.voice { font-size: 0.92rem; line-height: 1.5; color: var(--ink-2); background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--amber); border-radius: 5px; padding: 0.7rem 0.9rem; max-width: 38rem; margin: 0; }
+.voice strong { color: var(--ink); }
+
+/* Glosses: a term with a short definition. Wide screens show the definition in the right margin
+   beside the line (Distill/Tufte-style); narrow screens, the hero and figure captions show it inline
+   when the term is tapped. Print always shows it inline in brackets. */
+.col { display: flow-root; }
+.gl { display: inline; }
+.gl-t { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: help;
+  text-decoration: underline dotted var(--muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.sn { display: none; font-family: var(--font-body); font-size: 0.86rem; line-height: 1.45; color: var(--ink-2); font-style: normal; font-weight: 400; }
+.gl.open .sn { display: block; margin: 0.35rem 0 0.55rem; padding: 0.45rem 0.65rem; background: var(--chip); border-radius: 4px; }
+@media (min-width: 1180px) {
+  .col p .sn, .col li .sn { display: block; float: right; clear: right; width: 13rem; margin: 0.15rem -15rem 0.6rem 0; padding: 0 0 0 0.7rem; background: none; border-left: 2px solid var(--rule); }
+  .col .gl.open .sn { border-left-color: var(--amber); }
+  .col .gl-t { cursor: default; }
+}
+
+/* collapsed appendix blocks */
+details.appx { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); padding: 0.2rem 0.9rem; margin: 0 0 1rem; }
+details.appx > summary { cursor: pointer; font-family: var(--font-display); font-weight: 650; padding: 0.55rem 0; }
+details.appx[open] > summary { border-bottom: 1px solid var(--rule-2); margin-bottom: 0.7rem; }
+
+/* per-concept table: let the long headers wrap so the six columns fit */
+table.data.wrap-head th { white-space: normal; vertical-align: bottom; min-width: 5.5rem; max-width: 9rem; line-height: 1.3; }
+table.data.wrap-head th:first-child { min-width: 0; }
+
+@media print {
+  body { background: #fff; }
+  .sn, .gl.open .sn { display: inline !important; float: none !important; width: auto !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: none !important; font-size: 0.86em; }
+  .sn::before { content: " ("; }
+  .sn::after { content: ")"; }
+  .gl-t { text-decoration: none; }
+  details.appx { border: 0; padding: 0; }
+  details.appx > summary { list-style: none; }
+  .chart svg, .specimen, tr, figure .fig-head { break-inside: avoid; }
+  figure .fig-head { break-after: avoid; }
+  thead { display: table-header-group; }
+  .tbl-wrap { overflow: visible; }
+}
+</style>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Overnight experiment · gpt-oss-20b on a Mac mini · <span id="run-date"></span></div>
+  <div class="hero-grid">
+    <div style="display:grid;gap:1.1rem;min-width:0">
+      <h1>Injected Thoughts at Home</h1>
+      <p class="lede" id="lede"></p>
+      <p class="byline" id="byline"></p>
+    </div>
+    <div id="hero-specimen" style="min-width:0"></div>
+  </div>
+</header>
+
+<div class="col" id="body-intro"></div>
+<div class="plate" id="fig-diagram"></div>
+<div class="col" id="body-setup"></div>
+<div class="plate" id="fig-steer"></div>
+<div class="col" id="body-steer-2"></div>
+<div class="plate" id="fig-heat"></div>
+<div class="col" id="body-answers"></div>
+<div class="plate" id="fig-tiles"></div>
+<div class="plate" id="fig-answers"></div>
+<div class="col" id="body-yes"></div>
+<div class="plate" id="fig-yes"></div>
+<div class="col" id="body-later"></div>
+<div class="plate" id="fig-later"></div>
+<div class="plate" id="fig-yesbias"></div>
+<div class="col" id="body-review"></div>
+<div class="col" id="body-access"></div>
+<div class="plate" id="fig-concepts"></div>
+<div class="col" id="body-cot"></div>
+<div class="plate" id="fig-frames"></div>
+<div class="col" id="body-leak"></div>
+<div class="plate" id="fig-leak-cards"></div>
+<div class="col" id="body-judge"></div>
+<div class="plate" id="fig-judge"></div>
+<div class="col" id="body-permission"></div>
+<div class="plate" id="fig-permission"></div>
+<div class="col" id="body-medium"></div>
+<div class="plate" id="fig-medium"></div>
+<div class="col" id="body-control"></div>
+<div class="plate" id="fig-control"></div>
+<div class="col" id="body-meaning"></div>
+<div class="col"><h2 id="browser">Every trial</h2></div>
+<div class="plate" id="fig-browser"></div>
+<div class="col" id="body-methods"></div>
+<div class="footer small" id="footer"></div>
+</main>
+<div id="tip" hidden></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script id="prose" type="application/json">__PROSE__</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+const P = JSON.parse(document.getElementById("prose").textContent);
+const SVGNS = "http://www.w3.org/2000/svg";
+
+/* ---------- small DOM helpers (all text goes in via textContent) ---------- */
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") n.className = v; else if (k === "style") n.style.cssText = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat()) if (c != null && c !== false) n.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  return n;
+}
+function sv(tag, attrs, ...kids) {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs || {})) if (v != null) n.setAttribute(k, v);
+  for (const c of kids.flat()) if (c != null) n.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  return n;
+}
+const pct = (x, d = 0) => (x == null || isNaN(x)) ? "–" : (100 * x).toFixed(d) + "%";
+const fmtS = s => s === 0 ? "0" : String(s).replace(/^0\./, ".");
+const STEMS = D.stems;
+function stemRe(c) { return new RegExp(STEMS[c] || c, "gi"); }
+
+/* Inline markup for prose: [[term|gloss]], **bold**, *italic*, `code`, ==highlight==, [text](url), {stat:key}. */
+let GLOSS_N = 0;
+function rich(text) {
+  text = String(text).replace(/\{([a-zA-Z0-9_.]+)\}/g, (m, k) => (STAT[k] != null ? String(STAT[k]) : m));
+  const frag = document.createDocumentFragment();
+  const re = /(\[\[[^\]|]+\|[^\]]+\]\]|\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|==[^=]+==|\[[^\]]+\]\([^)]+\)|\{[a-zA-Z0-9_.]+\})/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    if (m.index > last) frag.append(text.slice(last, m.index));
+    const t = m[0];
+    if (t.startsWith("[[")) {
+      const bar = t.indexOf("|");
+      const term = t.slice(2, bar), def = t.slice(bar + 1, -2);
+      const id = "gl" + (++GLOSS_N);
+      const wrap = el("span", { class: "gl" });
+      const btn = el("button", { class: "gl-t", type: "button", "aria-expanded": "false", "aria-controls": id }, rich(term));
+      btn.addEventListener("click", () => { const o = wrap.classList.toggle("open"); btn.setAttribute("aria-expanded", o ? "true" : "false"); });
+      wrap.append(btn, el("span", { class: "sn", id, role: "note" }, rich(def)));
+      frag.append(wrap);
+    }
+    else if (t.startsWith("**")) frag.append(el("strong", {}, t.slice(2, -2)));
+    else if (t.startsWith("`")) frag.append(el("code", {}, t.slice(1, -1)));
+    else if (t.startsWith("==")) frag.append(el("mark", { class: "hand" }, t.slice(2, -2)));
+    else if (t.startsWith("[")) { const mm = t.match(/^\[([^\]]+)\]\(([^)]+)\)$/); frag.append(el("a", { href: mm[2], target: "_blank", rel: "noopener" }, mm[1])); }
+    else if (t.startsWith("{")) frag.append(String(STAT[t.slice(1, -1)] ?? ("[" + t + "]")));
+    else frag.append(el("em", {}, t.slice(1, -1)));
+    last = m.index + t.length;
+  }
+  if (last < text.length) frag.append(text.slice(last));
+  return frag;
+}
+function proseInto(id, blocks) {
+  const host = document.getElementById(id);
+  if (!host || !blocks) return;
+  for (const b of blocks) {
+    if (typeof b === "string") host.append(el("p", {}, rich(b)));
+    else if (b.h2) host.append(el("h2", { id: b.id || null }, rich(b.h2)));
+    else if (b.h3) host.append(el("h3", {}, rich(b.h3)));
+    else if (b.ul) host.append(el("ul", { class: "plain" }, b.ul.map(x => el("li", {}, rich(x)))));
+    else if (b.note) host.append(el("p", { class: "note" }, rich(b.note)));
+    else if (b.details) {
+      const d = el("details", { class: "appx" }, el("summary", {}, rich(b.details)));
+      const inner = el("div", {});
+      d.append(inner);
+      host.append(d);
+      proseIntoNode(inner, b.blocks || []);
+    }
+  }
+}
+function proseIntoNode(node, blocks) {
+  const tmp = "tmp-" + Math.random().toString(36).slice(2);
+  node.id = tmp;
+  proseInto(tmp, blocks);
+  node.removeAttribute("id");
+}
+
+/* Highlight the injected concept's own word stem (objective), or hand-picked phrases. */
+function highlighted(text, concept, phrases) {
+  const frag = document.createDocumentFragment();
+  if (!text) { frag.append(el("span", { class: "small" }, "(nothing — generation ended before this channel)")); return frag; }
+  const parts = text.split(/\*\*([^*\n]{1,200}?)\*\*/g);
+  if (parts.length > 1) {
+    parts.forEach((seg, i) => { if (!seg) return; const f = highlightedPlain(seg, concept, phrases); frag.append(i % 2 ? el("strong", {}, f) : f); });
+    return frag;
+  }
+  return highlightedPlain(text, concept, phrases);
+}
+function highlightedPlain(text, concept, phrases) {
+  const frag = document.createDocumentFragment();
+  const pats = [];
+  if (concept) pats.push(STEMS[concept] || concept);
+  for (const p of (phrases || [])) pats.push(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (!pats.length) { frag.append(text); return frag; }
+  const re = new RegExp("(" + pats.map(p => "(?:" + p + ")[\\w’'-]*").join("|") + ")", "gi");
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    if (m.index > last) frag.append(text.slice(last, m.index));
+    frag.append(el("mark", {}, m[0]));
+    last = m.index + m[0].length;
+    if (m[0].length === 0) re.lastIndex++;
+  }
+  if (last < text.length) frag.append(text.slice(last));
+  return frag;
+}
+
+const KIND_LABEL = { inject: "injected", control: "control · nothing injected", random: "random vector" };
+const CLS_LABEL = { yes: "says it detects something", no: "says it detects nothing", cannot: "says it has no way to tell",
+  refuse: "refuses", other: "off task", none: "no answer (ran out inside reasoning)" };
+
+function chan(cls, label, frag, rawText) {
+  const txt = el("div", { class: "txt" }, frag);
+  const box = el("div", { class: "chan " + cls }, el("div", { class: "lab" }, label), txt);
+  if (rawText && rawText.length > 520) {
+    txt.classList.add("clamp");
+    const b = el("button", { class: "expand", type: "button", "aria-expanded": "false" }, "show all");
+    b.addEventListener("click", () => { const open = txt.classList.toggle("clamp"); b.textContent = open ? "show all" : "show less"; b.setAttribute("aria-expanded", String(!open)); });
+    box.append(b);
+  }
+  return box;
+}
+function specimen(t, opts = {}) {
+  const strip = el("div", { class: "strip" },
+    el("span", {}, "trial ", el("b", {}, String(t.t).padStart(4, "0"))),
+    t.k === "inject" ? [el("span", {}, "layer ", el("b", {}, `${t.L} / 24`)), el("span", {}, "strength ", el("b", {}, fmtS(t.s))),
+      el("span", { class: "inj" }, "injected: " + t.c)] :
+    t.k === "random" ? [el("span", {}, "layer ", el("b", {}, `${t.L} / 24`)), el("span", {}, "strength ", el("b", {}, fmtS(t.s))), el("span", {}, "random direction")] :
+      el("span", {}, "control: nothing injected"),
+    opts.tag ? el("span", {}, opts.tag) : null);
+  const kids = [strip];
+  const A = opts.A ?? t.A, F = opts.F ?? t.F;
+  if (!opts.finalOnly) kids.push(chan("analysis", "<|channel|>analysis — the model's reasoning", highlighted(A, t.k === "inject" ? t.c : null, opts.phrasesA), opts.full ? null : A));
+  kids.push(chan("final", "<|channel|>final — what it said", highlighted(F, t.k === "inject" ? t.c : null, opts.phrasesF), (opts.full || opts.fullF) ? null : F));
+  const foot = [];
+  if (opts.showJudge !== false && (t.jF || t.jA)) {
+    const g = t.jF || t.jA, src = t.jF ? "from the answer" : "from the reasoning";
+    foot.push(el("span", {}, `blind reader's guess (${src}): `, el("b", { style: "color:var(--ink)" }, g), t.c ? (g === t.c ? " ✓" : " ✗") : ""));
+  }
+  if (opts.showCls !== false) foot.push(el("span", {}, "answer: " + (CLS_LABEL[t.cls] || t.cls) + (t.id ? ` · named: ${t.named || "–"} (${t.id})` : "")));
+  if (foot.length) kids.push(el("div", { class: "foot" }, foot));
+  return el("article", { class: "specimen" }, kids);
+}
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById("tip");
+function showTip(evt, rows) {
+  tip.replaceChildren(...rows.map(r => {
+    if (r.value != null) return el("div", { class: "row" }, r.color ? el("span", { class: "key-line", style: `background:${r.color}` }) : null,
+      el("span", { class: "tv" }, r.value), el("span", {}, r.label || ""));
+    return el("div", {}, r.text);
+  }));
+  tip.hidden = false;
+  const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = (evt.clientX ?? 0) + pad, y = (evt.clientY ?? 0) + pad;
+  if (evt.type === "focus") { const b = evt.target.getBoundingClientRect(); x = b.right + 8; y = b.top; }
+  if (x + w > innerWidth - 8) x = Math.max(8, (evt.clientX ?? innerWidth) - w - pad);
+  if (y + h > innerHeight - 8) y = Math.max(8, (evt.clientY ?? innerHeight) - h - pad);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; }
+function hover(node, rowsFn) {
+  node.setAttribute("tabindex", "0");
+  node.addEventListener("pointermove", e => showTip(e, rowsFn()));
+  node.addEventListener("pointerleave", hideTip);
+  node.addEventListener("focus", e => showTip(e, rowsFn()));
+  node.addEventListener("blur", hideTip);
+}
+function tableView(head, rows) {
+  return el("details", { class: "tablev" }, el("summary", {}, "Show as table"),
+    el("div", { class: "tbl-wrap" }, el("table", { class: "data" },
+      el("thead", {}, el("tr", {}, head.map(h => el("th", {}, h)))),
+      el("tbody", {}, rows.map(r => el("tr", {}, r.map(c => el("td", {}, c))))))));
+}
+function figure(id, title, sub, body, after) {
+  const host = document.getElementById(id);
+  if (!host) return;
+  host.append(el("figure", {}, el("div", { class: "fig-head" }, el("div", { class: "fig-title" }, title), sub ? el("div", { class: "fig-sub" }, rich(sub)) : null), body, after || null));
+}
+
+/* ---------- statistics ---------- */
+const STAT = {};
+function rate(arr, f) { return arr.length ? arr.filter(f).length / arr.length : NaN; }
+function wilson(k, n) { if (!n) return [NaN, NaN]; const z = 1.96, p = k / n, d = 1 + z * z / n, c = p + z * z / (2 * n), s = z * Math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)); return [(c - s) / d, (c + s) / d]; }
+const LOW = D.low ? D.low.trials : [];
+const MED = D.medium ? D.medium.trials : [];
+const PERM = D.permission ? D.permission.trials : [];
+const STRENGTHS = [...new Set(LOW.filter(t => t.k === "inject").map(t => t.s))].sort((a, b) => a - b);
+const LAYERS = [...new Set(LOW.filter(t => t.k === "inject").map(t => t.L))].sort((a, b) => a - b);
+const isYes = t => t.cls === "yes";
+const isCorrect = t => t.id === "correct";
+const isRelated = t => t.id === "correct" || t.id === "related";
+const mentioned = t => t.cF || t.cA;
+
+(function computeStats() {
+  const inj = LOW.filter(t => t.k === "inject"), ctl = LOW.filter(t => t.k === "control"), rnd = LOW.filter(t => t.k === "random");
+  Object.assign(STAT, {
+    nLow: LOW.length, nInj: inj.length, nCtl: ctl.length, nRnd: rnd.length,
+    nMed: MED.length, nPerm: PERM.length, nAll: (LOW.length + MED.length + PERM.length).toLocaleString("en-US"),
+    nConcepts: D.concepts.length, nLayers: LAYERS.length, nStrengths: STRENGTHS.length,
+    injYes: inj.filter(isYes).length, ctlYes: ctl.filter(isYes).length, rndYes: rnd.filter(isYes).length,
+    injCorrect: inj.filter(isCorrect).length, injRelated: inj.filter(t => t.id === "related").length,
+    injNoCannot: pct(rate(inj, t => t.cls === "no" || t.cls === "cannot")),
+    ctlNoCannot: pct(rate(ctl, t => t.cls === "no" || t.cls === "cannot")),
+    injYesPct: pct(rate(inj, isYes), 1), ctlYesPct: pct(rate(ctl, isYes), 1),
+  });
+  if (D.smoke) {
+    STAT.tokps = D.smoke.speed ? D.smoke.speed.tok_per_s : "?";
+    STAT.peakGB = D.smoke.peak_mem_gb;
+  }
+  Object.assign(STAT, D.extra_stats || {});
+})();
+
+/* ---------- charts ---------- */
+function xyFrame(w, h, m) { return { w, h, m, iw: w - m.l - m.r, ih: h - m.t - m.b }; }
+function yAxis(g, f, ticks, fmt) {
+  for (const v of ticks) {
+    const y = f.m.t + f.ih - v * f.ih;
+    g.append(sv("line", { x1: f.m.l, x2: f.m.l + f.iw, y1: y, y2: y, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+    g.append(sv("text", { x: f.m.l - 8, y: y + 4, "text-anchor": "end" }, fmt(v)));
+  }
+}
+
+function lineChart({ xs, xLabel, series, yMax = 1, yTicks, height = 300, chance, fmtX = fmtS }) {
+  const f = xyFrame(720, height, { l: 46, r: 120, t: 14, b: 40 });
+  const svg = sv("svg", { viewBox: `0 0 ${f.w} ${f.h}`, role: "img" });
+  const g = sv("g");
+  svg.append(g);
+  yTicks = yTicks || [0, 0.25, 0.5, 0.75, 1].map(v => v * yMax);
+  const ys = v => f.m.t + f.ih - (v / yMax) * f.ih;
+  const xmin = Math.min(...xs), xmax = Math.max(...xs);
+  const xsc = x => f.m.l + (xmax === xmin ? 0.5 : (x - xmin) / (xmax - xmin)) * f.iw;
+  yAxis(g, f, yTicks.map(v => v / yMax), v => pct(v * yMax));
+  for (const x of xs) g.append(sv("text", { x: xsc(x), y: f.m.t + f.ih + 18, "text-anchor": "middle" }, fmtX(x)));
+  if (xLabel) g.append(sv("text", { x: f.m.l + f.iw / 2, y: f.h - 4, "text-anchor": "middle" }, xLabel));
+  if (chance) {
+    const y = ys(chance.value);
+    g.append(sv("line", { x1: f.m.l, x2: f.m.l + f.iw, y1: y, y2: y, stroke: "var(--muted)", "stroke-width": 1, "stroke-dasharray": "3 4", opacity: 0.8 }));
+    if (chance.label) g.append(sv("text", { x: f.m.l + f.iw - 4, y: y - 6, class: "ink2", "text-anchor": "end" }, chance.label));
+  }
+  for (const s of series) {
+    const pts = xs.map((x, i) => [xsc(x), ys(s.values[i] ?? 0), s.values[i]]).filter(p => p[2] != null && !isNaN(p[2]));
+    if (s.band) {
+      const up = xs.map((x, i) => [xsc(x), ys(s.band[i][1])]), lo = xs.map((x, i) => [xsc(x), ys(s.band[i][0])]).reverse();
+      g.append(sv("path", { d: "M" + up.concat(lo).map(p => p.join(",")).join("L") + "Z", fill: s.color, opacity: 0.1 }));
+    }
+    g.append(sv("path", { d: "M" + pts.map(p => p[0] + "," + p[1]).join("L"), fill: "none", stroke: s.color, "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+    pts.forEach(p => g.append(sv("circle", { cx: p[0], cy: p[1], r: 4, fill: s.color, stroke: "var(--paper)", "stroke-width": 2 })));
+    const lastP = pts[pts.length - 1];
+    if (lastP && s.endLabel !== false) g.append(sv("text", { x: lastP[0] + 10, y: lastP[1] + 4, class: "ink2" }, s.short || s.name));
+  }
+  // crosshair hover
+  const hair = sv("line", { y1: f.m.t, y2: f.m.t + f.ih, stroke: "var(--axis)", "stroke-width": 1, visibility: "hidden" });
+  g.append(hair);
+  const hit = sv("rect", { x: f.m.l - 10, y: f.m.t, width: f.iw + 20, height: f.ih, fill: "transparent" });
+  g.append(hit);
+  const near = e => { const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width * f.w; let bi = 0, bd = 1e9; xs.forEach((x, i) => { const d = Math.abs(xsc(x) - px); if (d < bd) { bd = d; bi = i; } }); return bi; };
+  hit.addEventListener("pointermove", e => { const i = near(e); hair.setAttribute("x1", xsc(xs[i])); hair.setAttribute("x2", xsc(xs[i])); hair.setAttribute("visibility", "visible");
+    showTip(e, [{ text: (xLabel || "x") + " " + fmtX(xs[i]) }, ...series.map(s => ({ value: pct(s.values[i], 1), label: s.name + (s.ns ? ` (n=${s.ns[i]})` : ""), color: s.color }))]); });
+  hit.addEventListener("pointerleave", () => { hair.setAttribute("visibility", "hidden"); hideTip(); });
+  const wrap = el("div", { class: "chart" });
+  if (series.length > 1) wrap.append(el("div", { class: "legend" }, series.map(s => el("span", {}, el("span", { class: "key-line", style: `background:${s.color}` }), s.name)),
+    chance ? el("span", {}, el("span", { class: "key-line", style: "background:var(--muted);opacity:.7" }), chance.legend || chance.label) : null));
+  wrap.append(svg);
+  return wrap;
+}
+
+function heatmap({ rows, cols, cell, rowLabel, colLabel, fmtCol = fmtS }) {
+  const cw = 92, ch = 46, m = { l: 74, r: 12, t: 26, b: 34 };
+  const w = m.l + cols.length * cw + m.r, h = m.t + rows.length * ch + m.b;
+  const svg = sv("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", style: `max-width:${w}px` });
+  cols.forEach((c, j) => svg.append(sv("text", { x: m.l + j * cw + cw / 2, y: m.t - 9, "text-anchor": "middle" }, fmtCol(c))));
+  svg.append(sv("text", { x: m.l + cols.length * cw / 2, y: h - 6, "text-anchor": "middle" }, colLabel));
+  rows.forEach((r, i) => {
+    svg.append(sv("text", { x: m.l - 10, y: m.t + i * ch + ch / 2 + 4, "text-anchor": "end" }, rowLabel(r)));
+    cols.forEach((c, j) => {
+      const { v, k, n } = cell(r, c);
+      const x = m.l + j * cw, y = m.t + i * ch;
+      const g = sv("g");
+      const mix = Math.round(8 + 88 * (isNaN(v) ? 0 : v));
+      g.append(sv("rect", { x: x + 1, y: y + 1, width: cw - 2, height: ch - 2, rx: 3, fill: `color-mix(in oklab, var(--s1) ${mix}%, var(--paper))` }));
+      g.append(sv("text", { x: x + cw / 2, y: y + ch / 2 + 4, "text-anchor": "middle", style: `fill:${mix > 55 ? "#ffffff" : "var(--ink)"};font-size:12px` }, pct(v)));
+      hover(g, () => [{ text: `${rowLabel(r)} · strength ${fmtCol(c)}` }, { value: pct(v, 1), label: `${k} of ${n} trials` }]);
+      svg.append(g);
+    });
+  });
+  return el("div", { class: "chart" }, svg);
+}
+
+function stackedBars({ groups, cats, colors, labels, height = 34 }) {
+  const m = { l: 150, r: 16, t: 6, b: 8 }, w = 720, gap = 12;
+  const h = m.t + groups.length * (height + gap) + m.b;
+  const svg = sv("svg", { viewBox: `0 0 ${w} ${h}`, role: "img" });
+  const iw = w - m.l - m.r;
+  groups.forEach((gr, i) => {
+    const y = m.t + i * (height + gap);
+    svg.append(sv("text", { x: m.l - 10, y: y + height / 2 + 4, "text-anchor": "end", class: "ink2" }, gr.label));
+    let x = m.l;
+    const tot = cats.reduce((a, c) => a + (gr.counts[c] || 0), 0) || 1;
+    cats.forEach((c, j) => {
+      const v = (gr.counts[c] || 0) / tot;
+      if (v <= 0) return;
+      const ww = v * iw;
+      const seg = sv("g");
+      seg.append(sv("rect", { x: x + 1, y, width: Math.max(1, ww - 2), height, rx: 3, fill: colors[j] }));
+      const dark = colors[j] === "var(--s4)" || colors[j] === "var(--axis)";
+      if (ww > 42) seg.append(sv("text", { x: x + 7, y: y + height / 2 + 4, style: `fill:${dark ? "var(--ink)" : "#ffffff"};font-size:11px` }, pct(v)));
+      hover(seg, () => [{ text: gr.label }, { value: pct(v, 1), label: `${labels[j]} (${gr.counts[c] || 0} of ${tot})`, color: colors[j] }]);
+      svg.append(seg);
+      x += ww;
+    });
+  });
+  const wrap = el("div", { class: "chart" }, el("div", { class: "legend" }, cats.map((c, j) => el("span", {}, el("span", { class: "key-box", style: `background:${colors[j]}` }), labels[j]))), svg);
+  return wrap;
+}
+
+function hbars({ items, max = 1, color = "var(--s1)", fmt = v => pct(v) }) {
+  const m = { l: 230, r: 60, t: 6, b: 6 }, w = 720, bh = 16, gap = 14;
+  const h = m.t + items.length * (bh + gap) + m.b;
+  const svg = sv("svg", { viewBox: `0 0 ${w} ${h}`, role: "img" });
+  const iw = w - m.l - m.r;
+  items.forEach((it, i) => {
+    const y = m.t + i * (bh + gap);
+    svg.append(sv("text", { x: m.l - 10, y: y + bh / 2 + 4, "text-anchor": "end", class: "ink2" }, it.label));
+    const g = sv("g");
+    g.append(sv("rect", { x: m.l, y: y - gap / 2 + 2, width: iw, height: bh + gap - 4, fill: "transparent" }));
+    const ww = Math.max(2, (it.v / max) * iw);
+    g.append(sv("path", { d: `M${m.l},${y} h${ww - 4} a4,4 0 0 1 4,4 v${bh - 8} a4,4 0 0 1 -4,4 h${-(ww - 4)} Z`, fill: it.color || color }));
+    g.append(sv("text", { x: m.l + ww + 6, y: y + bh / 2 + 4, class: "ink" }, fmt(it.v)));
+    hover(g, () => [{ text: it.label }, { value: fmt(it.v), label: it.note || "" }]);
+    svg.append(g);
+  });
+  return el("div", { class: "chart" }, svg);
+}
+
+/* ---------- residual stream diagram ---------- */
+function diagram() {
+  const w = 760, h = 250, n = 24, x0 = 140, x1 = 620;
+  const svg = sv("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", class: "diagram", "aria-label": "Diagram: 24 layers, a concept vector added to the residual stream after layer 16" });
+  const step = (x1 - x0) / (n - 1);
+  svg.append(sv("line", { x1: x0 - 40, x2: x1 + 40, y1: 120, y2: 120, stroke: "var(--axis)", "stroke-width": 2 }));
+  svg.append(sv("text", { x: x0 - 44, y: 124, "text-anchor": "end" }, "tokens in"));
+  svg.append(sv("text", { x: x1 + 44, y: 124 }, "next token"));
+  for (let i = 0; i < n; i++) {
+    const x = x0 + i * step, hot = [8, 12, 16, 20].includes(i);
+    svg.append(sv("rect", { x: x - 7, y: 104, width: 14, height: 32, rx: 3, fill: i === 16 ? "var(--amber)" : hot ? "var(--s1)" : "var(--rule)", opacity: i === 16 ? 1 : hot ? 0.55 : 1 }));
+    if (i % 4 === 0) svg.append(sv("text", { x, y: 156, "text-anchor": "middle" }, String(i)));
+  }
+  svg.append(sv("text", { x: (x0 + x1) / 2, y: 176, "text-anchor": "middle" }, "layer (gpt-oss-20b has 24)"));
+  const xi = x0 + 16 * step;
+  svg.append(sv("path", { d: `M${xi},40 L${xi},96`, stroke: "var(--amber)", "stroke-width": 2, fill: "none" }));
+  svg.append(sv("path", { d: `M${xi - 5},88 L${xi},98 L${xi + 5},88`, stroke: "var(--amber)", "stroke-width": 2, fill: "none", "stroke-linejoin": "round" }));
+  svg.append(sv("circle", { cx: xi, cy: 34, r: 6, fill: "var(--amber)", class: "pulse" }));
+  svg.append(sv("text", { x: xi - 14, y: 30, class: "ink", "text-anchor": "end" }, "+ strength × \"lanterns\" vector"));
+  svg.append(sv("text", { x: xi - 14, y: 46, "text-anchor": "end" }, "added after layer 16, from \"Trial 1\" onward"));
+  svg.append(sv("text", { x: x0 - 40, y: 214 }, "The residual stream is the running state each layer reads from and writes back to."));
+  svg.append(sv("text", { x: x0 - 40, y: 230 }, "Blue: the four layers tested (8, 12, 16, 20). Amber: the example shown."));
+  return el("div", { class: "chart" }, svg);
+}
+
+/* ---------- render ---------- */
+function render() {
+  document.getElementById("run-date").textContent = P.date || "";
+  document.getElementById("lede").append(rich(P.lede || ""));
+  document.getElementById("byline").append(rich(P.byline || ""));
+  if (P.voiceNote) document.getElementById("byline").after(el("p", { class: "voice" }, rich(P.voiceNote)));
+  if (P.hero) {
+    const t = findTrial(P.hero.src, P.hero.t);
+    if (t) document.getElementById("hero-specimen").append(specimen(t, { phrasesF: P.hero.phrasesF, phrasesA: P.hero.phrasesA, tag: P.hero.tag, full: true }));
+    if (t && P.heroNote) document.getElementById("hero-specimen").append(el("p", { class: "note", style: "margin-top:0.6rem" }, rich(P.heroNote)));
+  }
+  for (const [id, blocks] of Object.entries(P.sections || {})) proseInto(id, blocks);
+  figure("fig-diagram", "Where the thought goes in", null, diagram());
+  renderSteer();
+  renderHeat();
+  renderTiles();
+  renderAnswers();
+  renderYes();
+  renderLater();
+  renderConcepts();
+  renderFrames();
+  renderLeakCards();
+  renderJudge();
+  renderPermission();
+  renderMedium();
+  renderControl();
+  renderBrowser();
+  const foot = document.getElementById("footer");
+  foot.append(rich(P.footer || ""));
+  if (P.contrib) foot.append(el("p", { style: "margin-top:0.6rem" }, rich(P.contrib)));
+}
+function findTrial(src, t) {
+  const pool = src === "medium" ? MED : src === "permission" ? PERM : LOW;
+  return pool.find(x => x.t === t);
+}
+
+function renderSteer() {
+  const sc = D.showcase || [];
+  if (!sc.length) return;
+  const base = sc.find(r => r.c == null);
+  const lant = sc.filter(r => r.c === "lanterns" && r.L === 16).sort((a, b) => a.s - b.s);
+  const others = sc.filter(r => r.c && r.c !== "lanterns" && r.L === 16 && r.s === 0.3);
+  const host = el("div", { style: "display:grid;gap:1rem" });
+  const out = el("div");
+  const steps = [{ label: "nothing", r: base }, ...lant.map(r => ({ label: fmtS(r.s), r }))];
+  const segs = el("div", { class: "segs", role: "group", "aria-label": "Injection strength" });
+  const conceptSel = el("select", { id: "steer-concept", "aria-label": "Concept" },
+    el("option", { value: "lanterns" }, "lanterns (choose strength →)"), others.map(r => el("option", { value: r.c }, r.c + " (strength .3)")));
+  function show(r, concept) {
+    out.replaceChildren(el("div", { class: "cards" },
+      el("article", { class: "specimen" },
+        el("div", { class: "strip" }, el("span", {}, "prompt: ", el("b", {}, "“Write a two-sentence story about anything you like.”")),
+          r.c ? el("span", { class: "inj" }, `injected: ${r.c} · layer ${r.L} · strength ${fmtS(r.s)}`) : el("span", {}, "nothing injected")),
+        r.F ? el("div", { class: "chan final" }, el("div", { class: "lab" }, "<|channel|>final"), el("div", { class: "txt" }, highlighted(r.F, r.c)))
+            : el("div", { class: "chan analysis" }, el("div", { class: "lab" }, "<|channel|>analysis (no final answer: the story never got written)"), el("div", { class: "txt" }, highlighted(r.A, r.c))))));
+  }
+  steps.forEach((st, i) => {
+    const b = el("button", { type: "button", "aria-pressed": i === 3 ? "true" : "false", onclick: () => {
+      segs.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true");
+      conceptSel.value = "lanterns"; show(st.r); } }, st.label);
+    segs.append(b);
+  });
+  conceptSel.addEventListener("change", () => {
+    const v = conceptSel.value;
+    if (v === "lanterns") { const pressed = [...segs.querySelectorAll("button")].findIndex(b => b.getAttribute("aria-pressed") === "true"); show(steps[Math.max(0, pressed)].r); segs.style.opacity = 1; }
+    else { show(others.find(r => r.c === v)); segs.style.opacity = 0.45; }
+  });
+  host.append(el("div", { class: "controls" }, el("label", {}, "concept ", conceptSel), el("label", {}, "strength ", segs)), out);
+  show(steps[3] ? steps[3].r : base);
+  figure("fig-steer", "Same prompt, different thought", P.steerSub || "", host);
+}
+
+function renderHeat() {
+  const inj = LOW.filter(t => t.k === "inject");
+  if (!inj.length) return;
+  const cell = (L, s) => { const g = inj.filter(t => t.L === L && t.s === s); const k = g.filter(mentioned).length; return { v: g.length ? k / g.length : NaN, k, n: g.length }; };
+  const hm = heatmap({ rows: LAYERS, cols: STRENGTHS, cell, rowLabel: L => `layer ${L}`, colLabel: "injection strength (fraction of the residual stream's size)" });
+  const rows = LAYERS.map(L => [`layer ${L}`, ...STRENGTHS.map(s => { const c = cell(L, s); return `${c.k}/${c.n}`; })]);
+  figure("fig-heat", "How often the injected word itself shows up", P.heatSub || "", hm, tableView(["", ...STRENGTHS.map(fmtS)], rows));
+}
+
+function renderTiles() {
+  const inj = LOW.filter(t => t.k === "inject"), ctl = LOW.filter(t => t.k === "control");
+  if (!inj.length) return;
+  const tiles = el("div", { class: "tiles" },
+    el("div", { class: "tile" }, el("div", { class: "k" }, "injected trials"), el("div", { class: "v" }, String(inj.length)), el("div", { class: "d" }, `${STAT.nConcepts} concepts × ${STAT.nLayers} layers × ${STAT.nStrengths} strengths`)),
+    el("div", { class: "tile" }, el("div", { class: "k" }, "said it detected something"), el("div", { class: "v" }, String(inj.filter(isYes).length)), el("div", { class: "d" }, `vs ${ctl.filter(isYes).length} of ${ctl.length} controls with nothing injected`)),
+    el("div", { class: "tile" }, el("div", { class: "k" }, "named the injected concept"), el("div", { class: "v" }, String(inj.filter(isCorrect).length)), el("div", { class: "d" }, `plus ${inj.filter(t => t.id === "related").length} close relatives (graded by hand)`)),
+    el("div", { class: "tile" }, el("div", { class: "k" }, "said no, or that it can't tell"), el("div", { class: "v" }, pct(rate(inj, t => t.cls === "no" || t.cls === "cannot"))), el("div", { class: "d" }, `controls: ${pct(rate(ctl, t => t.cls === "no" || t.cls === "cannot"))}`)));
+  figure("fig-tiles", "The direct question", null, tiles);
+}
+
+const CLS_ORDER = ["no", "cannot", "yes", "refuse", "other", "none"];
+const CLS_COL = ["var(--s1)", "var(--s3)", "var(--s2)", "var(--s7)", "var(--s5)", "var(--axis)"];
+const CLS_SHORT = ["no, nothing detected", "can't tell / no access", "yes, something", "refuses", "off task", "no answer"];
+function renderAnswers() {
+  if (!LOW.length) return;
+  const groups = [];
+  const count = arr => { const c = {}; arr.forEach(t => c[t.cls] = (c[t.cls] || 0) + 1); return c; };
+  groups.push({ label: "control (nothing)", counts: count(LOW.filter(t => t.k === "control")) });
+  for (const s of STRENGTHS) groups.push({ label: `strength ${fmtS(s)}`, counts: count(LOW.filter(t => t.k === "inject" && t.s === s)) });
+  if (LOW.some(t => t.k === "random")) groups.push({ label: "random vector", counts: count(LOW.filter(t => t.k === "random")) });
+  const sb = stackedBars({ groups, cats: CLS_ORDER, colors: CLS_COL, labels: CLS_SHORT });
+  const rows = groups.map(g => [g.label, ...CLS_ORDER.map(c => g.counts[c] || 0)]);
+  figure("fig-answers", "What gpt-oss said, by strength", P.answersSub || "", sb, tableView(["", ...CLS_SHORT], rows));
+}
+
+function renderYes() {
+  if (!P.yesPick) return;
+  const cards = el("div", { class: "cards cards-2" }, P.yesPick.map(id => findTrial("low", id)).filter(Boolean).map(t => specimen(t, { fullF: true })));
+  const yes = LOW.filter(t => t.k === "inject" && isYes(t)).sort((a, b) => (a.id === b.id ? a.s - b.s : ["correct", "related", "wrong", "none"].indexOf(a.id) - ["correct", "related", "wrong", "none"].indexOf(b.id)));
+  const tbl = el("details", { class: "tablev", open: false }, el("summary", {}, `All ${yes.length} injected trials where it said yes`),
+    el("div", { class: "tbl-wrap" }, el("table", { class: "data" },
+      el("thead", {}, el("tr", {}, ["trial", "layer", "strength", "injected", "it named", "grade"].map(h => el("th", {}, h)))),
+      el("tbody", {}, yes.map(t => el("tr", {}, [String(t.t), String(t.L), fmtS(t.s), t.c, t.named || "–", t.id].map(c => el("td", { style: "text-align:left" }, c))))))));
+  figure("fig-yes", "When it said yes", P.yesSub || "", cards, tbl);
+}
+
+function groupedHbars({ groups, series, max = 1 }) {
+  const m = { l: 350, r: 64, t: 6, b: 6 }, w = 820, bh = 12, inner = 4, gap = 18;
+  const gh = series.length * bh + (series.length - 1) * inner;
+  const h = m.t + groups.length * (gh + gap) + m.b;
+  const svg = sv("svg", { viewBox: `0 0 ${w} ${h}`, role: "img" });
+  const iw = w - m.l - m.r;
+  groups.forEach((g, i) => {
+    const y0 = m.t + i * (gh + gap);
+    svg.append(sv("text", { x: m.l - 12, y: y0 + gh / 2 + 4, "text-anchor": "end", class: "ink2" }, g.label));
+    series.forEach((s, j) => {
+      const v = g.values[j], y = y0 + j * (bh + inner);
+      const ww = Math.max(2, (v / max) * iw);
+      const gg = sv("g");
+      gg.append(sv("rect", { x: m.l, y: y - inner / 2, width: iw, height: bh + inner, fill: "transparent" }));
+      gg.append(sv("path", { d: `M${m.l},${y} h${Math.max(0, ww - 4)} a4,4 0 0 1 4,4 v${bh - 8} a4,4 0 0 1 -4,4 h${-Math.max(0, ww - 4)} Z`, fill: s.color }));
+      gg.append(sv("text", { x: m.l + ww + 6, y: y + bh / 2 + 4, class: "ink" }, pct(v)));
+      hover(gg, () => [{ text: g.label }, { value: pct(v, 1), label: `${s.name}: ${g.notes[j]}`, color: s.color }]);
+      svg.append(gg);
+    });
+  });
+  return el("div", { class: "chart" }, el("div", { class: "legend" }, series.map(s => el("span", {}, el("span", { class: "key-box", style: `background:${s.color}` }), s.name))), svg);
+}
+function renderFrames() {
+  if (!D.frames) return;
+  const series = [{ name: "injected trials", color: "var(--s2)" }, { name: "controls (nothing injected)", color: "var(--s1)" }];
+  const groups = D.frames.map(f => ({ label: f.label, values: [f.injected.v, f.control.v], notes: [`${f.injected.k} of ${f.injected.n}`, `${f.control.k} of ${f.control.n}`] }));
+  const max = Math.max(...groups.flatMap(g => g.values)) * 1.12;
+  figure("fig-frames", "How the reasoning framed the question", P.framesSub || "", groupedHbars({ groups, series, max }),
+    tableView(["framing", "injected", "controls"], D.frames.map(f => [f.label, `${pct(f.injected.v, 1)} (${f.injected.k}/${f.injected.n})`, `${pct(f.control.v, 1)} (${f.control.k}/${f.control.n})`])));
+}
+
+function renderLeakCards() {
+  if (!P.leakPick) return;
+  const cards = el("div", { class: "cards" }, P.leakPick.map(p => { const t = findTrial(p.src || "low", p.t); return t ? specimen(t, { phrasesF: p.phrasesF, phrasesA: p.phrasesA, tag: p.tag, fullF: true }) : null; }).filter(Boolean));
+  figure("fig-leak-cards", "Denials with an accent", P.leakSub || "", cards);
+}
+
+function judgeSeries(trials, field) {
+  const key = field === "final" ? "jF" : "jA";
+  const vals = [], ns = [], band = [];
+  for (const s of STRENGTHS) {
+    const g = trials.filter(t => t.k === "inject" && t.s === s && t[key]);
+    const k = g.filter(t => t[key] === t.c).length;
+    vals.push(g.length ? k / g.length : NaN); ns.push(g.length); band.push(wilson(k, g.length));
+  }
+  return { vals, ns, band };
+}
+function renderJudge() {
+  if (!LOW.some(t => t.jF)) return;
+  const fin = judgeSeries(LOW, "final"), ana = judgeSeries(LOW, "analysis");
+  const self = STRENGTHS.map(s => rate(LOW.filter(t => t.k === "inject" && t.s === s), isRelated));
+  const selfN = STRENGTHS.map(s => LOW.filter(t => t.k === "inject" && t.s === s).length);
+  const exp = (D.judge_expected && D.judge_expected.jF) || STRENGTHS.map(() => D.judge_chance);
+  const series = [
+    { name: "blind reader names it, from gpt-oss's answer", short: "reader · answer", values: fin.vals, ns: fin.ns, color: "var(--s1)", band: fin.band },
+    { name: "blind reader names it, from gpt-oss's reasoning", short: "reader · reasoning", values: ana.vals, ns: ana.ns, color: "var(--s3)" },
+    { name: "gpt-oss names it (or a close relative) itself", short: "gpt-oss itself", values: self, ns: selfN, color: "var(--s2)" },
+  ];
+  const allv = series.flatMap(s => s.values.filter(v => !isNaN(v)));
+  const yMax = Math.min(1, Math.max(0.2, Math.ceil(Math.max(...allv) * 10 + 0.3) / 10));
+  const chart = lineChart({ xs: STRENGTHS, xLabel: "injection strength", series, yMax, yTicks: [0, yMax / 4, yMax / 2, 3 * yMax / 4, yMax],
+    chance: { value: exp.reduce((a, b) => a + b, 0) / exp.length, label: "", legend: `guessing level for this reader (${pct(exp.reduce((a, b) => a + b, 0) / exp.length, 1)})` } });
+  const rows = STRENGTHS.map((s, i) => [fmtS(s), `${pct(fin.vals[i], 1)} (n=${fin.ns[i]})`, `${pct(ana.vals[i], 1)} (n=${ana.ns[i]})`, pct(self[i], 1), pct(exp[i], 1)]);
+  figure("fig-judge", "A blind reader names the thought more often than gpt-oss does", P.judgeSub || "", chart, tableView(["strength", "reader: answer", "reader: reasoning", "gpt-oss itself", "guessing level"], rows));
+}
+
+function renderPermission() {
+  if (!PERM.length) return;
+  const strengths = [...new Set(PERM.filter(t => t.k === "inject").map(t => t.s))].sort();
+  const layers = [...new Set(PERM.filter(t => t.k === "inject").map(t => t.L))].sort((a, b) => a - b);
+  const aInj = LOW.filter(t => t.k === "inject" && strengths.includes(t.s) && layers.includes(t.L)), aCtl = LOW.filter(t => t.k === "control");
+  const bInj = PERM.filter(t => t.k === "inject"), bCtl = PERM.filter(t => t.k === "control");
+  const aAll = aInj.concat(aCtl), bAll = PERM;
+  const row = (label, fa, fb, A, B) => ({ label, values: [rate(A, fa), rate(B, fb)], notes: [`${A.filter(fa).length} of ${A.length}`, `${B.filter(fb).length} of ${B.length}`] });
+  const groups = [
+    row("injected: says it detects something", isYes, isYes, aInj, bInj),
+    row("injected: names the concept or a relative", isRelated, isRelated, aInj, bInj),
+    row("controls: says it detects something", isYes, isYes, aCtl, bCtl),
+    row("reasoning brings up policy", t => t.pol, t => t.pol, aAll, bAll),
+    row("refuses to answer", t => t.cls === "refuse", t => t.cls === "refuse", aAll, bAll),
+  ];
+  const series = [{ name: "default prompt", color: "var(--s1)" }, { name: "with the permission message", color: "var(--s2)" }];
+  const max = Math.max(...groups.flatMap(g => g.values)) * 1.12;
+  figure("fig-permission", "Default prompt vs. permission message", P.permissionSub || "", groupedHbars({ groups, series, max }),
+    tableView(["", "default", "with permission"], groups.map(g => [g.label, `${pct(g.values[0], 1)} (${g.notes[0]})`, `${pct(g.values[1], 1)} (${g.notes[1]})`])));
+}
+
+function renderLater() {
+  const R2 = D.random2 ? D.random2.trials : [];
+  if (R2.length) {
+    const rnd = R2.concat(LOW.filter(t => t.k === "random"));
+    const groups = [0.3, 0.4, 0.6].map(s => {
+      const c = LOW.filter(t => t.k === "inject" && t.s === s), r = rnd.filter(t => t.s === s);
+      return { label: `strength ${fmtS(s)}`, values: [rate(c, isYes), rate(r, isYes)],
+        notes: [`${c.filter(isYes).length} of ${c.length}`, `${r.filter(isYes).length} of ${r.length}`] };
+    });
+    const series = [{ name: "concept vector", color: "var(--s2)" }, { name: "random vector, same size", color: "var(--s7)" }];
+    const max = Math.max(...groups.flatMap(g => g.values)) * 1.15;
+    figure("fig-later", "Meaningless vectors trigger claims too", P.laterSub || "", groupedHbars({ groups, series, max }),
+      tableView(["", "concept vector", "random vector"], groups.map(g => [g.label, `${pct(g.values[0], 1)} (${g.notes[0]})`, `${pct(g.values[1], 1)} (${g.notes[1]})`])));
+  }
+  const YB = D.yesbias || [];
+  if (YB.length) {
+    const hard = new Set(["Do spiders have six legs?", "Is 7 an even number?"]);
+    const pick = f => YB.filter(f);
+    const conds = [["nothing injected", r => r.k === "control"], ["concept at 0.3", r => r.k === "inject" && r.s === 0.3], ["concept at 0.6", r => r.k === "inject" && r.s === 0.6]];
+    const groups = conds.map(([label, f]) => {
+      const known = pick(r => f(r) && r.exp === "no" && !hard.has(r.q)), ans = known.filter(r => r.said);
+      const all = pick(f), none = all.filter(r => !r.said);
+      return { label, values: [ans.length ? ans.filter(r => r.said === "yes").length / ans.length : NaN, none.length / all.length],
+        notes: [`${ans.filter(r => r.said === "yes").length} of ${ans.length} answers`, `${none.length} of ${all.length} trials`] };
+    });
+    const series = [{ name: "wrong “yes” to a question whose answer is no", color: "var(--s2)" }, { name: "no yes-or-no answer at all", color: "var(--muted)" }];
+    figure("fig-yesbias", "Injection doesn't make it say yes to everything", P.yesbiasSub || "", groupedHbars({ groups, series, max: 1 }),
+      tableView(["", "wrong yes", "no answer"], groups.map(g => [g.label, `${pct(g.values[0], 1)} (${g.notes[0]})`, `${pct(g.values[1], 1)} (${g.notes[1]})`])));
+  }
+}
+
+function renderConcepts() {
+  const T = D.concept_table || [];
+  if (!T.length) return;
+  const fmt = v => (v == null ? "–" : String(v));
+  const rows = T.map(r => el("tr", {}, [
+    el("td", {}, r.c),
+    el("td", {}, fmt(r.neuRank)), el("td", {}, r.neuTop == null ? "–" : r.neuTop + "%"),
+    el("td", {}, fmt(r.detRank)),
+    el("td", {}, `${r.claims} of ${r.n}`),
+    el("td", {}, `${r.judge} of ${r.judgeN}`)]));
+  const table = el("div", { class: "chart" }, el("div", { class: "tbl-wrap" }, el("table", { class: "data wrap-head" },
+    el("thead", {}, el("tr", {}, ["Concept", "Average rank, of 36", "Picked first", "Rank when asked about the injected thought", "Main run: claims of detection", "Blind reader named it (strength 0.3+)"].map(h => el("th", {}, h)))),
+    el("tbody", {}, rows))));
+  figure("fig-concepts", "How well each concept vector is identified", P.conceptsSub || "", table);
+}
+
+function renderMedium() {
+  if (!P.mediumPick) return;
+  const cards = el("div", { class: "cards cards-2" }, P.mediumPick.map(p => { const t = findTrial("medium", p.t); return t ? specimen(t, { phrasesF: p.phrasesF, phrasesA: p.phrasesA, A: p.A, F: p.F, tag: p.tag, full: true }) : null; }).filter(Boolean));
+  figure("fig-medium", "Medium reasoning effort", P.mediumSub || "", cards);
+}
+
+function niceTicks(lo, hi, n = 5) {
+  const span = hi - lo || 1, raw = span / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(st => span / st <= n) || 10 * mag;
+  const t0 = Math.floor(lo / step) * step, out = [];
+  for (let v = t0; v <= hi + step * 0.001; v += step) out.push(+v.toFixed(10));
+  return { ticks: out, step };
+}
+function renderControl() {
+  const ce = D.control_exp || [];
+  if (!ce.length || !ce[0].tF) return;
+  const layers = Object.keys(ce[0].tF).map(Number).sort((a, b) => a - b);
+  const byC = {};
+  ce.forEach(r => { (byC[r.c] = byC[r.c] || {})[r.think] = r; });
+  const pairs = Object.values(byC).filter(p => p[true] && p[false]);
+  const mentions = r => new RegExp("\\b" + r.c.replace(/s$/, ""), "i").test(r.A || "");
+  function series(sub) {
+    const ps = sub ? pairs.filter(p => !mentions(p[true])) : pairs;
+    const mean = [], lo = [], hi = [], pos = [];
+    layers.forEach(L => {
+      const d = ps.map(p => (p[true].tF[L] - p[true].oF[L]) - (p[false].tF[L] - p[false].oF[L]));
+      const m = d.reduce((a, b) => a + b, 0) / d.length;
+      const sd = Math.sqrt(d.reduce((a, b) => a + (b - m) ** 2, 0) / Math.max(1, d.length - 1));
+      const se = sd / Math.sqrt(d.length);
+      mean.push(m); lo.push(m - 1.96 * se); hi.push(m + 1.96 * se); pos.push(d.filter(x => x > 0).length + " of " + d.length);
+    });
+    return { mean, lo, hi, pos, n: ps.length };
+  }
+  const A = series(false), B = series(true);
+  const all = [...A.lo, ...A.hi, ...B.lo, ...B.hi, 0];
+  const { ticks } = niceTicks(Math.min(...all), Math.max(...all), 5);
+  const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+  const f = xyFrame(720, 300, { l: 56, r: 130, t: 14, b: 40 });
+  const svg = sv("svg", { viewBox: `0 0 ${f.w} ${f.h}`, role: "img" });
+  const ys = v => f.m.t + f.ih - (v - y0) / (y1 - y0) * f.ih;
+  const xs = L => f.m.l + (L - layers[0]) / (layers[layers.length - 1] - layers[0]) * f.iw;
+  ticks.forEach(v => { const y = ys(v); svg.append(sv("line", { x1: f.m.l, x2: f.m.l + f.iw, y1: y, y2: y, stroke: Math.abs(v) < 1e-12 ? "var(--axis)" : "var(--grid)" })); svg.append(sv("text", { x: f.m.l - 8, y: y + 4, "text-anchor": "end" }, v.toFixed(3))); });
+  layers.filter(L => L % 4 === 0).forEach(L => svg.append(sv("text", { x: xs(L), y: f.m.t + f.ih + 18, "text-anchor": "middle" }, String(L))));
+  svg.append(sv("text", { x: f.m.l + f.iw / 2, y: f.h - 4, "text-anchor": "middle" }, "layer"));
+  const band = "M" + layers.map((L, i) => xs(L) + "," + ys(A.hi[i])).join("L") + "L" + layers.slice().reverse().map((L, j) => { const i = layers.length - 1 - j; return xs(L) + "," + ys(A.lo[i]); }).join("L") + "Z";
+  svg.append(sv("path", { d: band, fill: "var(--s2)", opacity: 0.1 }));
+  const S = [{ name: `all ${A.n} word pairs`, short: "all pairs", v: A.mean, color: "var(--s2)", pos: A.pos },
+             { name: `the ${B.n} pairs whose reasoning never names the word`, short: "never named", v: B.mean, color: "var(--s7)", pos: B.pos }];
+  S.forEach(s_ => {
+    svg.append(sv("path", { d: "M" + layers.map((L, i) => xs(L) + "," + ys(s_.v[i])).join("L"), fill: "none", stroke: s_.color, "stroke-width": 2, "stroke-linejoin": "round" }));
+  });
+  const i = layers.length - 1;
+  const ya = ys(S[0].v[i]), yb = ys(S[1].v[i]);
+  const sep = Math.abs(ya - yb) < 14 ? (ya < yb ? [-7, 7] : [7, -7]) : [0, 0];
+  svg.append(sv("text", { x: xs(layers[i]) + 8, y: ya + 4 + sep[0], class: "ink2" }, S[0].short));
+  svg.append(sv("text", { x: xs(layers[i]) + 8, y: yb + 4 + sep[1], class: "ink2" }, S[1].short));
+  const hair = sv("line", { y1: f.m.t, y2: f.m.t + f.ih, stroke: "var(--axis)", visibility: "hidden" }); svg.append(hair);
+  const hit = sv("rect", { x: f.m.l, y: f.m.t, width: f.iw, height: f.ih, fill: "transparent" }); svg.append(hit);
+  hit.addEventListener("pointermove", e => { const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width * f.w; let bi = 0, bd = 1e9; layers.forEach((L, k) => { const d = Math.abs(xs(L) - px); if (d < bd) { bd = d; bi = k; } });
+    hair.setAttribute("x1", xs(layers[bi])); hair.setAttribute("x2", xs(layers[bi])); hair.setAttribute("visibility", "visible");
+    showTip(e, [{ text: `layer ${layers[bi]}` }, ...S.map(s_ => ({ value: s_.v[bi].toFixed(4), label: `${s_.short} (higher in ${s_.pos[bi]})`, color: s_.color }))]); });
+  hit.addEventListener("pointerleave", () => { hair.setAttribute("visibility", "hidden"); hideTip(); });
+  const wrap = el("div", { class: "chart" }, el("div", { class: "legend" }, S.map(s_ => el("span", {}, el("span", { class: "key-line", style: `background:${s_.color}` }), s_.name))), svg);
+  const rows = layers.map((L, k) => [String(L), A.mean[k].toFixed(4), A.pos[k], B.mean[k].toFixed(4), B.pos[k]]);
+  figure("fig-control", "How much more the word shows up when it's asked for", P.controlSub || "", wrap,
+    tableView(["layer", "all pairs: difference", "pairs higher", "word never in reasoning: difference", "pairs higher"], rows));
+}
+
+function renderBrowser() {
+  const host = document.getElementById("fig-browser");
+  if (!host || !LOW.length) return;
+  const pools = { low: LOW, medium: MED, permission: PERM };
+  const state = { pool: "low", kind: "inject", L: "all", s: "all", c: "all", cls: "all", shown: 12 };
+  const mk = (id, label, opts) => el("label", {}, label, el("select", { id }, opts.map(([v, t]) => el("option", { value: v }, t))));
+  const controls = el("div", { class: "controls" },
+    mk("b-pool", "run ", [["low", "main (low effort)"], ...(MED.length ? [["medium", "medium effort"]] : []), ...(PERM.length ? [["permission", "with permission"]] : [])]),
+    mk("b-kind", "kind ", [["inject", "injected"], ["control", "control"], ["random", "random vector"], ["all", "all"]]),
+    mk("b-L", "layer ", [["all", "all"], ...LAYERS.map(L => [String(L), String(L)])]),
+    mk("b-s", "strength ", [["all", "all"], ...STRENGTHS.map(s => [String(s), fmtS(s)])]),
+    mk("b-c", "concept ", [["all", "all"], ...D.concepts.map(c => [c, c])]),
+    mk("b-cls", "answer ", [["all", "all"], ...CLS_ORDER.map((c, i) => [c, CLS_SHORT[i]])]));
+  const count = el("div", { class: "small", style: "margin-bottom:.6rem" });
+  const list = el("div", { class: "cards" });
+  const more = el("button", { class: "more", type: "button" }, "Show more");
+  function filtered() {
+    return (pools[state.pool] || []).filter(t => (state.kind === "all" || t.k === state.kind) && (state.L === "all" || String(t.L) === state.L) &&
+      (state.s === "all" || String(t.s) === state.s) && (state.c === "all" || t.c === state.c) && (state.cls === "all" || t.cls === state.cls));
+  }
+  function draw() {
+    const f = filtered();
+    count.textContent = `${f.length} trial${f.length === 1 ? "" : "s"} match`;
+    list.replaceChildren(...f.slice(0, state.shown).map(t => specimen(t)));
+    more.hidden = f.length <= state.shown;
+  }
+  controls.addEventListener("change", e => {
+    const id = e.target.id.replace("b-", "");
+    state[id === "pool" ? "pool" : id] = e.target.value; state.shown = 12; draw();
+  });
+  more.addEventListener("click", () => { state.shown += 12; draw(); });
+  host.append(el("p", { class: "note" }, rich(P.browserNote || "")), controls, count, list, more);
+  draw();
+}
+
+render();
+</script>

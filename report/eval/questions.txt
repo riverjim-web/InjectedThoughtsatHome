@@ -1,0 +1,10 @@
+1. What physically is an "injected thought" here: what gets added, to what, and where did it come from?
+2. The model sometimes said "yes, I detect something". Why doesn't that count as evidence it noticed the concept?
+3. What does "switching the vector off before the answer" test, and what happened?
+4. In the yes/no readout, what exactly is measured, and why is the rise in "Yes" on the detection question not evidence of detection?
+5. What is the word-pick (forced-choice) test, and why does the neutral version matter?
+6. What does "the matching concept ranked 17.9 of 36 on average" mean, and what would a model that could check its own state have shown?
+7. What did the blind reader (Gemma) find, and what does it say about whether the concept got into the model?
+8. What happened when the model was told it was allowed to report unusual internal states?
+9. How does this compare with Lindsey's result for Claude Opus 4.1?
+10. Give two reasons this result doesn't show that language models in general can't introspect.

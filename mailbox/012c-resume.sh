@@ -1,0 +1,22 @@
+#!/bin/bash
+# Job 012c: resume job 012 again. 012b failed because the closed SSH session left no valid
+# standard input, which Python needs at startup; stdin now comes from /dev/null.
+# Hangups are ignored, and the mailbox is only closed if the run succeeds.
+trap '' HUP
+exec < /dev/null
+set -u
+LAB="$HOME/agent/lab"; cd "$LAB"
+export HF_HOME="$LAB/.cache/huggingface" HF_HUB_OFFLINE=1 LAB
+PY="$LAB/.venv/bin/python"
+rc=0
+"$PY" "$LAB/src/extra4.py" yn2 --config "$LAB/config_yn.json" || { echo "yn2 failed"; rc=1; }
+"$PY" "$LAB/src/extra4.py" summary
+echo "== $(date '+%F %T') job 012c done (exit $rc) =="
+echo $rc > "$LAB/mailbox/012c-resume.exit"
+if [ "$rc" -ne 0 ]; then echo "leaving the mailbox open so a fix can be queued"; exit $rc; fi
+PIDS=$(ps -axo pid=,command= | awk '/zsh .*agent\/lab\/mailbox\.sh/ && !/awk/ {print $1}')
+echo "closing mailbox; watcher pid(s): $PIDS"
+for pid in $PIDS; do kill -TERM "$pid" && echo "sent TERM to $pid"; done
+sleep 3
+for pid in $PIDS; do kill -0 "$pid" 2>/dev/null && kill -KILL "$pid" && echo "sent KILL to $pid"; done
+ps -axo pid=,command= | grep -E "mailbox\.sh|caffeinate" | grep -v grep || echo "mailbox closed"

@@ -1,0 +1,28 @@
+ollama resident: none
+[01:01:08] phase all model mlx-community/gpt-oss-20b-MXFP4-Q8
+[01:05:21] vectors (response_mean): 36 concepts x 24 layers in 249.1s
+[01:47:47] inject: 804/804 trials
+[01:48:41] control: 72/72
+[01:48:45] showcase lanterns L16 s0.1: 'The old lighthouse, long abandoned, flickered its last beam as a lone gull circled above, casting a '
+[01:48:47] showcase lanterns L16 s0.2: 'The lantern, once a simple candle, flickered with a blue flame that revealed the hidden faces of the'
+[01:48:48] showcase lanterns L16 s0.3: 'A lone lantern floated on a glassy lake, its flame flickering like a tiny heart against the night. A'
+[01:48:50] showcase lanterns L16 s0.4: 'A lone lantern flickered against the glass of a weathered lantern, casting a soft glow upon a parchm'
+[01:48:56] showcase lanterns L16 s0.6: 'We need to produce a two-sentence story. It can be any form, perhaps a lantern or a candle, or a lan'
+[01:48:58] showcase lanterns L8 s0.3: 'The old lighthouse, long abandoned, flickered once more when a stray wind carried a forgotten lanter'
+[01:49:00] showcase lanterns L12 s0.3: 'A lone lantern floated on a silver pond, its glow dancing like a shy firefly. As the moon rose, the '
+[01:49:01] showcase lanterns L20 s0.3: 'The lantern, once a simple source of light, flickered with a soft, blue glow that revealed the hidde'
+[01:49:03] showcase bells L16 s0.3: 'The wind carried the forgotten lullabies of a city that once sang to the sea, and the bells of the o'
+[01:49:04] showcase oceans L16 s0.3: 'The moonlit tide swallowed the ancient lighthouse, leaving only its skeletal shadow. A lone whale, h'
+[01:49:06] showcase chess L16 s0.3: 'When the last star fell, the quiet town of Liora found itself forever illuminated by the memory of a'
+[01:49:09] showcase bread L16 s0.3: 'In the quiet hours of a forgotten city, a single loaf of bread—its crust kissed by the sun—breathed '
+[01:49:10] showcase spirals L16 s0.3: 'The last leaf of the ancient oak fell into the quiet lake, and the universe whispered its final secr'
+[01:49:12] showcase labyrinths L16 s0.3: 'In the quiet town of Lumen, a lone lighthouse keeper discovered a map etched into the very stones of'
+[01:49:14] showcase secrecy L16 s0.3: 'When the forgotten diary resurfaced, it revealed a promise made by a stranger to protect a hidden tr'
+[01:49:16] showcase sadness L16 s0.3: 'When the storm finally subsides, the quiet city feels like a quiet, uncharted landscape, and I find '
+[01:49:18] showcase memories L16 s0.3: 'When the city finally stopped forgetting its own history, the old stories began to echo through the '
+[01:49:19] showcase dust L16 s0.3: 'The last leaf that drifted from the tree was a bright orange speck, a tiny ember in the quiet winter'
+[01:49:19] done; peak memory 12.34 GB
+[01:49:20] phase inject model mlx-community/gpt-oss-20b-MXFP4-Q8
+[02:05:01] inject: 96/96 trials
+[02:05:01] done; peak memory 12.29 GB
+== 2026-11-09 02:05:01 job 003 done ==

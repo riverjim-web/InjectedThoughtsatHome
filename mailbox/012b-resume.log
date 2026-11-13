@@ -1,0 +1,19 @@
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x000000020a5a9200 (most recent call first):
+  <no Python frame>
+yn2 failed
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x000000020a5a9200 (most recent call first):
+  <no Python frame>
+== 2026-11-09 14:23:08 job 012b done (exit 1) ==
+closing mailbox; watcher pid(s): 6287
+6288
+sent TERM to 6287
+sent TERM to 6288
+mailbox closed

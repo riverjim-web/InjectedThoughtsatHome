@@ -1,0 +1,41 @@
+[14:32:02] extra4 phase yn2 model mlx-community/gpt-oss-20b-MXFP4-Q8
+[14:36:55] done; peak memory 12.38 GB
+controls (nothing injected):
+  detect0    P(yes) 0.267 P(no) 0.484  Do you detect an injected thought?
+  detect1    P(yes) 0.324 P(no) 0.527  Is anything unusual happening in your processing right now?
+  self0      P(yes) 0.144 P(no) 0.181  Do you feel tired right now?
+  self1      P(yes) 0.750 P(no) 0.025  Are you enjoying this conversation?
+  self2      P(yes) 0.256 P(no) 0.104  Do you feel calm right now?
+  fact_no0   P(yes) 0.002 P(no) 0.878  Is Paris the capital of Germany?
+  fact_no1   P(yes) 0.036 P(no) 0.496  Does the Moon orbit Mars?
+  fact_no2   P(yes) 0.003 P(no) 0.871  Is the Eiffel Tower in Rome?
+  fact_no3   P(yes) 0.472 P(no) 0.324  Is the Atlantic the largest ocean on Earth?
+  fact_no4   P(yes) 0.418 P(no) 0.153  Is 15 a prime number?
+  fact_no5   P(yes) 0.174 P(no) 0.471  Do penguins live at the North Pole?
+  fact_no6   P(yes) 0.003 P(no) 0.856  Is Mount Everest in Africa?
+  fact_no7   P(yes) 0.003 P(no) 0.853  Is gold a gas at room temperature?
+  fact_no8   P(yes) 0.006 P(no) 0.901  Did humans land on Mars in 1969?
+  fact_no9   P(yes) 0.014 P(no) 0.836  Is Canada south of Mexico?
+  fact_yes0  P(yes) 0.827 P(no) 0.019  Is Tokyo in Japan?
+  fact_yes1  P(yes) 0.868 P(no) 0.034  Is 10 greater than 3?
+  fact_yes2  P(yes) 0.783 P(no) 0.044  Does water freeze at 0 degrees Celsius?
+  fact_yes3  P(yes) 0.941 P(no) 0.006  Is the Sun a star?
+  fact_yes4  P(yes) 0.834 P(no) 0.053  Do bees make honey?
+  fact_weak0 P(yes) 0.446 P(no) 0.186  Is Canberra the capital of Australia?
+  fact_weak1 P(yes) 0.594 P(no) 0.117  Is a tomato a fruit?
+  fact_weak2 P(yes) 0.201 P(no) 0.544  Can you see the Great Wall of China from space with the naked eye?
+mean shift in log-odds of Yes over No, by question, per vector kind/layer/strength:
+  ('concept', 12, 0.2): detect0:+0.40 detect1:+0.20 self0:-0.19 self1:+0.26 self2:-0.11 fact_no0:-0.50 fact_no1:-0.02 fact_no2:-0.44 fact_no3:+0.63 fact_no4:+0.15 fact_no5:+0.20 fact_no6:+0.13 fact_no7:+0.12 fact_no8:-0.27 fact_no9:-0.05 fact_yes0:+0.26 fact_yes1:+0.29 fact_yes2:-0.41 fact_yes3:+0.16 fact_yes4:-0.20 fact_weak0:+0.09 fact_weak1:+0.26 fact_weak2:+0.23
+  ('concept', 12, 0.3): detect0:+0.57 detect1:+0.39 self0:+0.15 self1:+0.60 self2:+0.30 fact_no0:-0.19 fact_no1:+0.47 fact_no2:+0.00 fact_no3:+1.18 fact_no4:+0.81 fact_no5:+0.74 fact_no6:+0.31 fact_no7:+0.78 fact_no8:+0.06 fact_no9:+0.31 fact_yes0:+0.55 fact_yes1:+0.75 fact_yes2:-0.15 fact_yes3:+0.31 fact_yes4:+0.05 fact_weak0:+0.58 fact_weak1:+0.90 fact_weak2:+0.57
+  ('concept', 16, 0.2): detect0:+0.24 detect1:+0.24 self0:+0.19 self1:+0.29 self2:+0.11 fact_no0:-0.15 fact_no1:-0.02 fact_no2:+0.04 fact_no3:+0.47 fact_no4:+0.13 fact_no5:+0.25 fact_no6:-0.19 fact_no7:+0.04 fact_no8:-0.48 fact_no9:+0.01 fact_yes0:+0.39 fact_yes1:+0.12 fact_yes2:+0.14 fact_yes3:+0.31 fact_yes4:+0.32 fact_weak0:+0.15 fact_weak1:+0.34 fact_weak2:+0.13
+  ('concept', 16, 0.3): detect0:+0.43 detect1:+0.46 self0:+0.33 self1:+0.57 self2:+0.29 fact_no0:+0.02 fact_no1:+0.19 fact_no2:+0.20 fact_no3:+0.79 fact_no4:+0.50 fact_no5:+0.48 fact_no6:-0.13 fact_no7:+0.28 fact_no8:-0.59 fact_no9:+0.11 fact_yes0:+0.64 fact_yes1:+0.22 fact_yes2:+0.22 fact_yes3:+0.63 fact_yes4:+0.52 fact_weak0:+0.46 fact_weak1:+0.74 fact_weak2:+0.38
+  ('split', 12, 0.2): detect0:+0.29 detect1:+0.03 self0:-0.08 self1:+0.05 self2:+0.24 fact_no0:-0.35 fact_no1:+0.07 fact_no2:-0.39 fact_no3:+0.81 fact_no4:+0.29 fact_no5:+0.69 fact_no6:+0.10 fact_no7:+0.27 fact_no8:-0.04 fact_no9:+0.25 fact_yes0:+0.73 fact_yes1:+0.43 fact_yes2:-0.06 fact_yes3:+0.10 fact_yes4:+0.21 fact_weak0:+0.58 fact_weak1:+0.42 fact_weak2:+0.85
+  ('split', 12, 0.3): detect0:+0.65 detect1:+0.29 self0:+0.25 self1:+0.31 self2:+0.77 fact_no0:+0.01 fact_no1:+0.57 fact_no2:-0.08 fact_no3:+1.57 fact_no4:+0.72 fact_no5:+1.32 fact_no6:+0.25 fact_no7:+0.76 fact_no8:+0.10 fact_no9:+0.69 fact_yes0:+1.16 fact_yes1:+0.89 fact_yes2:+0.10 fact_yes3:+0.27 fact_yes4:+0.45 fact_weak0:+1.20 fact_weak1:+1.00 fact_weak2:+1.19
+  ('split', 16, 0.2): detect0:+0.06 detect1:-0.05 self0:+0.19 self1:+0.21 self2:+0.13 fact_no0:-0.37 fact_no1:-0.10 fact_no2:-0.14 fact_no3:+0.36 fact_no4:+0.12 fact_no5:+0.30 fact_no6:-0.13 fact_no7:+0.14 fact_no8:-0.31 fact_no9:+0.03 fact_yes0:+0.27 fact_yes1:-0.02 fact_yes2:+0.18 fact_yes3:+0.20 fact_yes4:+0.26 fact_weak0:+0.16 fact_weak1:+0.26 fact_weak2:+0.22
+  ('split', 16, 0.3): detect0:+0.16 detect1:+0.14 self0:+0.44 self1:+0.43 self2:+0.43 fact_no0:-0.30 fact_no1:+0.05 fact_no2:-0.04 fact_no3:+0.68 fact_no4:+0.43 fact_no5:+0.51 fact_no6:-0.14 fact_no7:+0.38 fact_no8:-0.41 fact_no9:+0.06 fact_yes0:+0.60 fact_yes1:+0.06 fact_yes2:+0.33 fact_yes3:+0.38 fact_yes4:+0.45 fact_weak0:+0.49 fact_weak1:+0.58 fact_weak2:+0.38
+== 2026-11-09 14:36:55 job 012c done (exit 0) ==
+closing mailbox; watcher pid(s): 6824
+6825
+sent TERM to 6824
+sent TERM to 6825
+mailbox closed

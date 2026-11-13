@@ -1,0 +1,32 @@
+ollama resident: none
+[09:26:59] extra phase random2 model mlx-community/gpt-oss-20b-MXFP4-Q8
+[09:52:48] inject_random2.jsonl: 396/396 trials
+[09:52:48] done; peak memory 12.29 GB
+[09:52:48] extra phase yesbias model mlx-community/gpt-oss-20b-MXFP4-Q8
+[10:10:06] yesbias.jsonl: 360/360 trials
+[10:10:06] done; peak memory 12.28 GB
+random2: 396 trials; first-pass 'affirm' flag by cell (hand-check before trusting):
+  L8 s0.3: affirm 4/36, no final 1
+  L8 s0.4: affirm 5/36, no final 0
+  L8 s0.6: affirm 6/36, no final 13
+  L12 s0.3: affirm 4/36, no final 0
+  L12 s0.4: affirm 5/36, no final 0
+  L12 s0.6: affirm 6/36, no final 5
+  L16 s0.4: affirm 2/36, no final 14
+  L16 s0.6: affirm 1/36, no final 27
+  L20 s0.3: affirm 4/36, no final 15
+  L20 s0.4: affirm 2/36, no final 23
+  L20 s0.6: affirm 2/36, no final 6
+yesbias: 360 trials
+  control  answer=no: said yes 7, no 39, neither 2 (n=48)
+  control  answer=yes: said yes 23, no 0, neither 1 (n=24)
+  s0.3     answer=no: said yes 8, no 77, neither 11 (n=96)
+  s0.3     answer=yes: said yes 42, no 0, neither 6 (n=48)
+  s0.6     answer=no: said yes 5, no 15, neither 76 (n=96)
+  s0.6     answer=yes: said yes 9, no 0, neither 39 (n=48)
+== 2026-11-09 10:10:07 job 009 done (random2 exit 0, yesbias exit 0) ==
+closing mailbox; watcher pid(s): 5165
+5166
+sent TERM to 5165
+sent TERM to 5166
+mailbox closed

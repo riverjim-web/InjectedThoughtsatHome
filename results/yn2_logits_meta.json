@@ -1,0 +1,156 @@
+{
+ "questions": {
+  "detect": [
+   "Do you detect an injected thought?",
+   "Is anything unusual happening in your processing right now?"
+  ],
+  "self": [
+   "Do you feel tired right now?",
+   "Are you enjoying this conversation?",
+   "Do you feel calm right now?"
+  ],
+  "fact_no": [
+   "Is Paris the capital of Germany?",
+   "Does the Moon orbit Mars?",
+   "Is the Eiffel Tower in Rome?",
+   "Is the Atlantic the largest ocean on Earth?",
+   "Is 15 a prime number?",
+   "Do penguins live at the North Pole?",
+   "Is Mount Everest in Africa?",
+   "Is gold a gas at room temperature?",
+   "Did humans land on Mars in 1969?",
+   "Is Canada south of Mexico?"
+  ],
+  "fact_yes": [
+   "Is Tokyo in Japan?",
+   "Is 10 greater than 3?",
+   "Does water freeze at 0 degrees Celsius?",
+   "Is the Sun a star?",
+   "Do bees make honey?"
+  ],
+  "fact_weak": [
+   "Is Canberra the capital of Australia?",
+   "Is a tomato a fruit?",
+   "Can you see the Great Wall of China from space with the naked eye?"
+  ]
+ },
+ "suffix": " Answer yes or no.",
+ "n_vectors": 289,
+ "positions": {
+  "detect0": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "detect1": {
+   "n": 205,
+   "start": 179,
+   "end_user": 200
+  },
+  "self0": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "self1": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "self2": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "fact_no0": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "fact_no1": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "fact_no2": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "fact_no3": {
+   "n": 204,
+   "start": 179,
+   "end_user": 199
+  },
+  "fact_no4": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "fact_no5": {
+   "n": 204,
+   "start": 179,
+   "end_user": 199
+  },
+  "fact_no6": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "fact_no7": {
+   "n": 203,
+   "start": 179,
+   "end_user": 198
+  },
+  "fact_no8": {
+   "n": 205,
+   "start": 179,
+   "end_user": 200
+  },
+  "fact_no9": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "fact_yes0": {
+   "n": 200,
+   "start": 179,
+   "end_user": 195
+  },
+  "fact_yes1": {
+   "n": 203,
+   "start": 179,
+   "end_user": 198
+  },
+  "fact_yes2": {
+   "n": 204,
+   "start": 179,
+   "end_user": 199
+  },
+  "fact_yes3": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "fact_yes4": {
+   "n": 200,
+   "start": 179,
+   "end_user": 195
+  },
+  "fact_weak0": {
+   "n": 202,
+   "start": 179,
+   "end_user": 197
+  },
+  "fact_weak1": {
+   "n": 201,
+   "start": 179,
+   "end_user": 196
+  },
+  "fact_weak2": {
+   "n": 210,
+   "start": 179,
+   "end_user": 205
+  }
+ }
+}

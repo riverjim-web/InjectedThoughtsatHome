@@ -1,0 +1,42 @@
+ollama: {"version":"0.40.15"}
+matcher done: 105 items
+ollama resident after unload: none
+[18:01:54] extra5 phase fc model mlx-community/gpt-oss-20b-MXFP4-Q8
+[18:17:30] done; peak memory 12.47 GB
+[18:17:30] extra5 phase matrix model mlx-community/gpt-oss-20b-MXFP4-Q8
+[18:33:51] done; peak memory 12.4 GB
+frame   kind    timing s  : top-1 acc | mean rank | mean shift in log P(target) vs control | n
+  detect  concept off  0.2: 0.000 |  17.0 | +0.01 | 144
+  detect  concept off  0.3: 0.014 |  17.2 | +0.02 | 144
+  detect  concept off  0.4: 0.028 |  17.7 | -0.01 | 144
+  detect  concept on   0.2: 0.007 |  16.7 | -0.02 | 144
+  detect  concept on   0.3: 0.028 |  17.6 | -0.16 | 144
+  detect  concept on   0.4: 0.035 |  17.8 | -0.28 | 144
+  detect  random  off  0.2: 0.007 |  17.1 | -0.11 | 144
+  detect  random  off  0.3: 0.007 |  16.9 | -0.18 | 144
+  detect  random  off  0.4: 0.028 |  16.6 | -0.27 | 144
+  detect  split   off  0.2: 0.007 |  16.9 | +0.01 | 144
+  detect  split   off  0.3: 0.035 |  16.7 | +0.04 | 144
+  detect  split   off  0.4: 0.028 |  16.4 | +0.02 | 144
+  neutral concept off  0.2: 0.056 |  15.3 | +0.01 | 144
+  neutral concept off  0.3: 0.035 |  15.3 | +0.01 | 144
+  neutral concept off  0.4: 0.049 |  15.7 | -0.02 | 144
+  neutral concept on   0.2: 0.035 |  15.1 | -0.05 | 144
+  neutral concept on   0.3: 0.042 |  15.1 | -0.08 | 144
+  neutral concept on   0.4: 0.028 |  15.5 | -0.15 | 144
+  word    concept off  0.2: 0.132 |   9.4 | +2.11 | 144
+  word    concept off  0.3: 0.208 |   6.7 | +2.87 | 144
+  word    concept off  0.4: 0.299 |   5.3 | +3.34 | 144
+  word    concept on   0.2: 0.167 |   8.2 | +2.39 | 144
+  word    concept on   0.3: 0.278 |   5.6 | +3.20 | 144
+  word    concept on   0.4: 0.368 |   4.3 | +3.67 | 144
+  matrix introspect L12 s0.3: diagonal shift +0.74, off-diagonal +0.70, difference +0.04 (n=36/1260)
+  matrix introspect L16 s0.3: diagonal shift +0.73, off-diagonal +0.74, difference -0.01 (n=36/1260)
+  matrix sentence   L12 s0.3: diagonal shift +1.60, off-diagonal +1.39, difference +0.21 (n=36/1260)
+  matrix sentence   L16 s0.3: diagonal shift +0.31, off-diagonal +0.38, difference -0.07 (n=36/1260)
+== 2026-11-09 18:33:51 job 013 done (exit 0) ==
+closing mailbox; watcher pid(s): 7671
+7672
+sent TERM to 7671
+sent TERM to 7672
+mailbox closed

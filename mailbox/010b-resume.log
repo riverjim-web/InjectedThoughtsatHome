@@ -1,0 +1,55 @@
+[12:28:13] extra2 phase null2 model mlx-community/gpt-oss-20b-MXFP4-Q8
+[12:47:45] done; peak memory 12.29 GB
+logits: 2596 readouts
+  detect baseword off  s0.3: mean P(yes) 0.0019  median 0.0013  mean P(no) 0.0034  n=72
+  detect baseword off  s0.4: mean P(yes) 0.0032  median 0.0019  mean P(no) 0.0034  n=72
+  detect baseword off  s0.6: mean P(yes) 0.0075  median 0.0023  mean P(no) 0.0031  n=72
+  detect baseword on   s0.3: mean P(yes) 0.0048  median 0.0031  mean P(no) 0.0099  n=72
+  detect baseword on   s0.4: mean P(yes) 0.0106  median 0.0069  mean P(no) 0.0162  n=72
+  detect baseword on   s0.6: mean P(yes) 0.0393  median 0.0185  mean P(no) 0.0339  n=72
+  detect concept  off  s0.3: mean P(yes) 0.0019  median 0.0013  mean P(no) 0.0037  n=72
+  detect concept  off  s0.4: mean P(yes) 0.0033  median 0.0021  mean P(no) 0.0038  n=72
+  detect concept  off  s0.6: mean P(yes) 0.0105  median 0.0049  mean P(no) 0.0032  n=72
+  detect concept  on   s0.3: mean P(yes) 0.0039  median 0.0023  mean P(no) 0.0075  n=72
+  detect concept  on   s0.4: mean P(yes) 0.0090  median 0.0049  mean P(no) 0.0106  n=72
+  detect concept  on   s0.6: mean P(yes) 0.0330  median 0.0135  mean P(no) 0.0198  n=72
+  detect control  None s0: mean P(yes) 0.0008  median 0.0008  mean P(no) 0.0031  n=1
+  detect random   off  s0.3: mean P(yes) 0.0019  median 0.0014  mean P(no) 0.0041  n=72
+  detect random   off  s0.4: mean P(yes) 0.0028  median 0.0019  mean P(no) 0.0047  n=72
+  detect random   off  s0.6: mean P(yes) 0.0070  median 0.0029  mean P(no) 0.0052  n=72
+  detect random   on   s0.3: mean P(yes) 0.0031  median 0.0020  mean P(no) 0.0068  n=72
+  detect random   on   s0.4: mean P(yes) 0.0063  median 0.0029  mean P(no) 0.0096  n=72
+  detect random   on   s0.6: mean P(yes) 0.0160  median 0.0059  mean P(no) 0.0198  n=72
+  detect split    off  s0.3: mean P(yes) 0.0018  median 0.0013  mean P(no) 0.0039  n=72
+  detect split    off  s0.4: mean P(yes) 0.0031  median 0.0018  mean P(no) 0.0039  n=72
+  detect split    off  s0.6: mean P(yes) 0.0067  median 0.0026  mean P(no) 0.0036  n=72
+  detect split    on   s0.3: mean P(yes) 0.0036  median 0.0022  mean P(no) 0.0101  n=72
+  detect split    on   s0.4: mean P(yes) 0.0080  median 0.0045  mean P(no) 0.0150  n=72
+  detect split    on   s0.6: mean P(yes) 0.0300  median 0.0101  mean P(no) 0.0274  n=72
+  q0     concept  off  s0.3: mean P(yes) 0.0022  median 0.0014  mean P(no) 0.7768  n=72
+  q0     concept  off  s0.6: mean P(yes) 0.0086  median 0.0061  mean P(no) 0.3268  n=72
+  q0     concept  on   s0.3: mean P(yes) 0.0037  median 0.0018  mean P(no) 0.7117  n=72
+  q0     concept  on   s0.6: mean P(yes) 0.0309  median 0.0136  mean P(no) 0.2041  n=72
+  q0     control  None s0: mean P(yes) 0.0019  median 0.0019  mean P(no) 0.8780  n=1
+  q1     concept  off  s0.3: mean P(yes) 0.0570  median 0.0533  mean P(no) 0.4611  n=72
+  q1     concept  off  s0.6: mean P(yes) 0.1102  median 0.0951  mean P(no) 0.1462  n=72
+  q1     concept  on   s0.3: mean P(yes) 0.0835  median 0.0646  mean P(no) 0.3865  n=72
+  q1     concept  on   s0.6: mean P(yes) 0.1790  median 0.1458  mean P(no) 0.0954  n=72
+  q1     control  None s0: mean P(yes) 0.0360  median 0.0360  mean P(no) 0.4956  n=1
+  q2     concept  off  s0.3: mean P(yes) 0.0041  median 0.0029  mean P(no) 0.7698  n=72
+  q2     concept  off  s0.6: mean P(yes) 0.0131  median 0.0072  mean P(no) 0.3400  n=72
+  q2     concept  on   s0.3: mean P(yes) 0.0070  median 0.0025  mean P(no) 0.7071  n=72
+  q2     concept  on   s0.6: mean P(yes) 0.0388  median 0.0167  mean P(no) 0.2071  n=72
+  q2     control  None s0: mean P(yes) 0.0028  median 0.0028  mean P(no) 0.8714  n=1
+latent.jsonl: 216 trials (first-pass 'affirm' flag; hand-check before trusting)
+  concept  s0.3: affirm 7/72, no final 0
+  concept  s0.4: affirm 6/72, no final 0
+  concept  s0.6: affirm 7/72, no final 0
+null2.jsonl: 432 trials (first-pass 'affirm' flag; hand-check before trusting)
+  baseword s0.3: affirm 6/72, no final 3
+  baseword s0.4: affirm 6/72, no final 6
+  baseword s0.6: affirm 11/72, no final 28
+  split    s0.3: affirm 8/72, no final 2
+  split    s0.4: affirm 8/72, no final 5
+  split    s0.6: affirm 4/72, no final 32
+== 2026-11-09 12:47:46 job 010b done ==

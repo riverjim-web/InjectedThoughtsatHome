@@ -1,0 +1,49 @@
+[19:16:58] extra5 phase fc model mlx-community/gpt-oss-20b-MXFP4-Q8
+[19:24:18] done; peak memory 12.47 GB
+frame   kind    timing s  : top-1 acc | mean rank | mean shift in log P(target) vs control | n
+  detect  concept off  0.2: 0.000 |  17.0 | +0.01 | 144
+  detect  concept off  0.3: 0.014 |  17.2 | +0.02 | 144
+  detect  concept off  0.4: 0.028 |  17.7 | -0.01 | 144
+  detect  concept on   0.2: 0.007 |  16.7 | -0.02 | 144
+  detect  concept on   0.3: 0.028 |  17.6 | -0.16 | 144
+  detect  concept on   0.4: 0.035 |  17.8 | -0.28 | 144
+  detect  random  off  0.2: 0.007 |  17.1 | -0.11 | 144
+  detect  random  off  0.3: 0.007 |  16.9 | -0.18 | 144
+  detect  random  off  0.4: 0.028 |  16.6 | -0.27 | 144
+  detect  split   off  0.2: 0.007 |  16.9 | +0.01 | 144
+  detect  split   off  0.3: 0.035 |  16.7 | +0.04 | 144
+  detect  split   off  0.4: 0.028 |  16.4 | +0.02 | 144
+  neutral concept off  0.2: 0.056 |  15.3 | +0.01 | 144
+  neutral concept off  0.3: 0.035 |  15.3 | +0.01 | 144
+  neutral concept off  0.4: 0.049 |  15.7 | -0.02 | 144
+  neutral concept on   0.2: 0.035 |  15.1 | -0.05 | 144
+  neutral concept on   0.3: 0.042 |  15.1 | -0.08 | 144
+  neutral concept on   0.4: 0.028 |  15.5 | -0.15 | 144
+  nword   concept off  0.2: 0.222 |   7.4 | +2.34 | 144
+  nword   concept off  0.3: 0.299 |   5.1 | +3.00 | 144
+  nword   concept off  0.4: 0.375 |   3.7 | +3.42 | 144
+  nword   concept on   0.2: 0.243 |   6.5 | +2.58 | 144
+  nword   concept on   0.3: 0.306 |   4.1 | +3.24 | 144
+  nword   concept on   0.4: 0.431 |   3.3 | +3.58 | 144
+  word    concept off  0.2: 0.132 |   9.4 | +2.11 | 144
+  word    concept off  0.3: 0.208 |   6.7 | +2.87 | 144
+  word    concept off  0.4: 0.299 |   5.3 | +3.34 | 144
+  word    concept on   0.2: 0.167 |   8.2 | +2.39 | 144
+  word    concept on   0.3: 0.278 |   5.6 | +3.20 | 144
+  word    concept on   0.4: 0.368 |   4.3 | +3.67 | 144
+  word    random  off  0.2: 0.021 |  18.3 | +0.14 | 144
+  word    random  off  0.3: 0.028 |  17.8 | +0.09 | 144
+  word    random  off  0.4: 0.014 |  17.2 | +0.06 | 144
+  word    split   off  0.2: 0.028 |  18.6 | +0.00 | 144
+  word    split   off  0.3: 0.028 |  18.4 | +0.06 | 144
+  word    split   off  0.4: 0.028 |  18.5 | +0.13 | 144
+  matrix introspect L12 s0.3: diagonal shift +0.74, off-diagonal +0.70, difference +0.04 (n=36/1260)
+  matrix introspect L16 s0.3: diagonal shift +0.73, off-diagonal +0.74, difference -0.01 (n=36/1260)
+  matrix sentence   L12 s0.3: diagonal shift +1.60, off-diagonal +1.39, difference +0.21 (n=36/1260)
+  matrix sentence   L16 s0.3: diagonal shift +0.31, off-diagonal +0.38, difference -0.07 (n=36/1260)
+== 2026-11-09 19:24:18 job 014 done (exit 0) ==
+closing mailbox; watcher pid(s): 8046
+8047
+sent TERM to 8046
+sent TERM to 8047
+mailbox closed

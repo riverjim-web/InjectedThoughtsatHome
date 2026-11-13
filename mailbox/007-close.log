@@ -1,0 +1,4 @@
+before:
+ 2580  1785 zsh ~/agent/lab/mailbox.sh
+after:
+ 2580  1785 zsh ~/agent/lab/mailbox.sh

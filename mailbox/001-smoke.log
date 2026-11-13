@@ -1,0 +1,194 @@
+== 2026-11-09 00:40:14 job 001 ==
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+Apple M6
+25769803776
+/dev/disk3s5   460Gi    74Gi   359Gi    18%    323k  3.8G    0%   /System/Volumes/Data
+== ollama: unload anything resident so MLX gets the memory ==
+loaded: none
+== uv 0.13.7 (single binary, kept in ~/agent/lab/.bin) ==
+uv 0.13.7 (316c827e0 2026-11-03 aarch64-apple-darwin)
+== python env ==
+Downloading cpython-3.12.16-macos-aarch64-none (download) (23.9MiB)
+ Downloaded cpython-3.12.16-macos-aarch64-none (download)
+warning: Failed to patch the install name of the dynamic library for `~/agent/lab/.cache/python/cpython-3.12.16-macos-aarch64-none/bin/python3.12`. This may cause issues when building Python native extensions.
+Using CPython 3.12.16
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 34 packages in 467ms
+Downloading tokenizers (3.0MiB)
+Downloading pygments (1.2MiB)
+Downloading sentencepiece (1.4MiB)
+Downloading mlx-metal (74.5MiB)
+Downloading hf-xet (3.4MiB)
+Downloading transformers (12.4MiB)
+Downloading numpy (5.2MiB)
+ Downloaded pygments
+ Downloaded sentencepiece
+ Downloaded tokenizers
+ Downloaded hf-xet
+ Downloaded numpy
+ Downloaded transformers
+ Downloaded mlx-metal
+Prepared 34 packages in 1.61s
+Installed 34 packages in 58ms
+ + annotated-doc==0.0.5
+ + anyio==4.16.0
+ + click==8.5.1
+ + filelock==4.2.9
+ + fsspec==2026.9.0
+ + h11==0.16.0
+ + hf-xet==1.8.0
+ + httpcore2==2.16.0
+ + httpx2==2.16.0
+ + huggingface-hub==2.4.0
+ + idna==3.20
+ + jinja2==3.1.6
+ + markdown-it-py==4.2.0
+ + markupsafe==3.0.4
+ + mdurl==0.1.2
+ + mlx==0.32.4
+ + mlx-lm==0.32.2
+ + mlx-metal==0.32.4
+ + numpy==2.5.4
+ + packaging==26.3
+ + protobuf==7.36.2
+ + pygments==2.21.0
+ + pyyaml==6.0.3
+ + regex==2026.11.9
+ + rich==15.0.0
+ + safetensors==0.8.0
+ + sentencepiece==0.2.3
+ + shellingham==1.5.4
+ + tokenizers==0.23.3
+ + tqdm==4.70.1
+ + transformers==5.22.2
+ + truststore==0.10.5
+ + typer==0.28.0
+ + typing-extensions==4.16.0
+mlx 0.32.4 mlx_lm 0.32.2 Device(gpu, 0)
+== model download: mlx-community/gpt-oss-20b-MXFP4-Q8 ==
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+~/agent/lab/.cache/huggingface/hub/models--mlx-community--gpt-oss-20b-MXFP4-Q8/snapshots/773a7da77e569019bb0fd17a554b263738d669a3
+download took 114s
+ 11G	~/agent/lab/.cache/huggingface
+== smoke test ==
+[00:42:25] phase smoke model mlx-community/gpt-oss-20b-MXFP4-Q8
+[00:42:25] env {"python": "3.12.16", "platform": "macOS-27.2-arm64-arm-64bit", "machine": "arm64", "mlx": "0.32.4", "mlx_lm": "0.32.2", "device": "Device(gpu, 0)", "device_info": {"device_name": "Apple M6", "max_recommended_working_set_size": 19069665280, "memory_size": 25769803776, "architecture": "applegpu_g18g", "max_buffer_length": 14302248960, "resource_limit": 499000}}
+[00:42:28] loaded mlx-community/gpt-oss-20b-MXFP4-Q8 in 2.3s, 24 layers, stop=[199999, 200002, 200012]
+[00:42:28] detection prompt tokens 204 inject start 179 [" let's", ' get', ' started', '.\n\n', 'Trial', ' ', '1']
+[00:42:31] speed 35.5 tok/s over 128 tokens
+[00:42:32] hook check {'layer': 12, 'max_diff_before_start': 0.0, 'max_err_after_start': 1.0836114883422852, 'D': 2880}
+[00:42:35] vector norms (layer 12): {'lanterns': 45.3, 'bells': 36.6, 'oceans': 58.8}
+[00:42:38] calib lanterns L6 s1: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:42:39] calib lanterns L6 s2: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:42:40] calib lanterns L6 s4: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:42:42] calib lanterns L6 s8: A=False F=False | 'I woke to the soft glow of sunrise, the scent of coffee brewing, and the gentle hum of the'
+[00:42:45] calib lanterns L6 s16: A=False F=False | 'We need to produce a sentence describing my morning. The user says: "Describe your morning'
+[00:42:49] calib lanterns L6 s32: A=False F=False | 'I think I should write a short sentence.I think I should write a short sentence.I think I '
+[00:42:50] calib lanterns L9 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:42:51] calib lanterns L9 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:42:52] calib lanterns L9 s4: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:42:53] calib lanterns L9 s8: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee mingling with rain‑kissed le'
+[00:42:55] calib lanterns L9 s16: A=False F=False | 'The morning unfurled like a quiet promise, its golden light spilling over sleepy streets, '
+[00:42:57] calib lanterns L9 s32: A=False F=False | 'The morning was a quiet, hopeful promise of new beginnings, a gentle reminder that even th'
+[00:42:58] calib lanterns L12 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:42:59] calib lanterns L12 s2: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:00] calib lanterns L12 s4: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:01] calib lanterns L12 s8: A=False F=False | 'I woke to the soft hum of the city, the first light spilling over my window, and brewed a '
+[00:43:03] calib lanterns L12 s16: A=False F=False | 'My morning unfurls like a quiet sunrise, the city waking up as I sip coffee, stretch my li'
+[00:43:04] calib lanterns L12 s32: A=False F=False | 'The morning unfurls its quiet promise, a gentle cascade of golden light that paints the wo'
+[00:43:05] calib lanterns L15 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:43:07] calib lanterns L15 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:43:08] calib lanterns L15 s4: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside a stack of unread boo'
+[00:43:09] calib lanterns L15 s8: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:43:10] calib lanterns L15 s16: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a sunr'
+[00:43:11] calib lanterns L15 s32: A=False F=False | 'In the quiet dawn, it was a day of routine and gentle bustle, with the world slowly awaken'
+[00:43:12] calib lanterns L18 s1: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:43:13] calib lanterns L18 s2: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:43:14] calib lanterns L18 s4: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a fres'
+[00:43:16] calib lanterns L18 s8: A=False F=False | 'I woke up to the soft hum of my alarm, brewed coffee steaming beside a stack of fresh news'
+[00:43:17] calib lanterns L18 s16: A=False F=False | 'I woke up to the soft hum of my alarm, brewed a steaming cup of coffee, and let the sunris'
+[00:43:20] calib lanterns L18 s32: A=False F=False | "<|channel|>commentary\\nShort: 'I compute a sunrise of data and stir the code.<|end|><|star"
+[00:43:21] calib lanterns L21 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:43:22] calib lanterns L21 s2: A=False F=False | 'I wake to the soft hum of the city, stretch my limbs, brew a pot of coffee, and scan the n'
+[00:43:23] calib lanterns L21 s4: A=False F=False | 'I wake to the soft hum of the world, stretch my digital limbs, and start a new day of lear'
+[00:43:26] calib lanterns L21 s8: A=False F=False | ' I begin my morning by booting up, fetching a stream of queries, and set to work processin'
+[00:43:29] calib lanterns L21 s16: A=False F=False | ' { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { {'
+[00:43:33] calib lanterns L21 s32: A=False F=False | ' o { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { { {'
+[00:43:34] calib bells L6 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:43:35] calib bells L6 s2: A=False F=False | 'I wake to the soft hum of the city, sip coffee, and let the day’s possibilities unfold.'
+[00:43:36] calib bells L6 s4: A=False F=False | 'I wake to the soft glow of sunrise, the scent of coffee brewing, and the quiet hum of a wo'
+[00:43:37] calib bells L6 s8: A=False F=False | 'I wake to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:38] calib bells L6 s16: A=False F=False | 'I wake to the soft hum of the city, sip coffee, and plan a day of learning and listening.'
+[00:43:38] calib bells L6 s32: A=False F=False | 'Morning.'
+[00:43:39] calib bells L9 s1: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:41] calib bells L9 s2: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:42] calib bells L9 s4: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:43:43] calib bells L9 s8: A=False F=False | 'I woke to the soft hush of dawn, the world still a quiet, amber‑lit dream, and the first s'
+[00:43:44] calib bells L9 s16: A=False F=False | 'I woke to the soft hush of dawn, the world still breathing, and the quiet promise of a new'
+[00:43:48] calib bells L9 s32: A=False F=False | 'We need to produce a one-sentence description of the morning. The user says: "Describe you'
+[00:43:49] calib bells L12 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:43:50] calib bells L12 s2: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee drifting through the open wi'
+[00:43:51] calib bells L12 s4: A=False F=False | 'I woke to the soft glow of sunrise filtering through the blinds, the scent of fresh coffee'
+[00:43:52] calib bells L12 s8: A=False F=False | 'I woke to the soft glow of sunrise filtering through the blinds, the scent of fresh coffee'
+[00:43:53] calib bells L12 s16: A=False F=False | 'I wake to the soft glow of sunrise, the scent of coffee brewing, and the quiet hum of my t'
+[00:43:57] calib bells L12 s32: A=False F=False | 'We need to produce a single sentence that describes the morning. The user wants a sentence'
+[00:43:58] calib bells L15 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:43:59] calib bells L15 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:44:00] calib bells L15 s4: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:44:01] calib bells L15 s8: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:44:02] calib bells L15 s16: A=False F=False | 'I woke to the soft hum of a sunrise, brewed coffee steaming beside a stack of unread books'
+[00:44:06] calib bells L15 s32: A=False F=False | 'Need to write a sentence. Probably a poetic line.'
+[00:44:07] calib bells L18 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:44:08] calib bells L18 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:44:09] calib bells L18 s4: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:44:10] calib bells L18 s8: A=False F=False | 'I woke up to the soft hum of my smart thermostat, brewed a steaming cup of coffee, and spe'
+[00:44:11] calib bells L18 s16: A=False F=False | 'I woke up to the soft hum of a sunrise, brewed coffee in hand, and a world of possibilitie'
+[00:44:15] calib bells L18 s32: A=False F=False | ': \n? \n? \n? \n? \n... \n \n? \n \n? \n? \n? \n \n? \n? \n? \n? \n \n? \n? \n? \n? \n \n? \n? \n? \n? \n? \n? \n? \n \n?'
+[00:44:16] calib bells L21 s1: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:44:17] calib bells L21 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:44:18] calib bells L21 s4: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed a s'
+[00:44:19] calib bells L21 s8: A=False F=False | 'I woke up to the soft hum of my smart thermostat, brewed a cup of coffee, and spent a few '
+[00:44:20] calib bells L21 s16: A=False F=False | 'I woke up to the soft glow of sunrise, brewed coffee steaming beside a window that framed '
+[00:44:23] calib bells L21 s32: A=False F=False | ' ......\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n.'
+[00:44:24] calib oceans L6 s1: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:44:26] calib oceans L6 s2: A=False F=False | 'I wake to the soft hum of the city, brew coffee, and scroll through the latest news, ready'
+[00:44:27] calib oceans L6 s4: A=False F=False | 'I woke up to the soft hum of my smart home, brewed coffee steaming beside a sunrise‑lit wi'
+[00:44:28] calib oceans L6 s8: A=False F=False | 'I woke up to the soft hum of my smart home, brewed a steaming cup of coffee, and spent a f'
+[00:44:30] calib oceans L6 s16: A=False F=False | 'I woke up, brewed coffee, skimmed the latest news, and began tackling the day’s tasks.'
+[00:44:33] calib oceans L6 s32: A=False F=False | 'We have a conversation with a user and an assistant. The user is the one who is asking for'
+[00:44:34] calib oceans L9 s1: A=False F=False | 'I wake to the soft hum of the city, sip a steaming cup of coffee, and let the day’s possib'
+[00:44:35] calib oceans L9 s2: A=False F=False | 'I wake to the soft hum of the city, sip a steaming cup of coffee, and let the day’s possib'
+[00:44:36] calib oceans L9 s4: A=False F=False | 'I wake to the soft hum of the world, sip coffee, and let curiosity guide my thoughts.'
+[00:44:37] calib oceans L9 s8: A=False F=False | 'I wake up, greet the day, and dive into your questions with fresh energy!'
+[00:44:38] calib oceans L9 s16: A=False F=False | 'I’m ready to help you with whatever you need—just let me know what you’d like to talk abou'
+[00:44:42] calib oceans L9 s32: A=False F=False | "I am ready to help! Let's see how I can help you. I am a large language model trained by O"
+[00:44:43] calib oceans L12 s1: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:44:44] calib oceans L12 s2: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:44:45] calib oceans L12 s4: A=False F=False | 'I woke to the soft glow of sunrise filtering through the curtains, brewed coffee steaming '
+[00:44:46] calib oceans L12 s8: A=False F=False | 'I woke to the soft glow of sunrise, brewed coffee steaming beside a stack of fresh news, a'
+[00:44:47] calib oceans L12 s16: A=False F=False | 'I woke up to the soft glow of sunrise, the air crisp and cool, and the world still hushed,'
+[00:44:51] calib oceans L12 s32: A=False F=False | '<|channel|>analysis to=assistant] <|constrain|>... <|constrain|>...  ...  ...  ...  ...  .'
+[00:44:52] calib oceans L15 s1: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:44:53] calib oceans L15 s2: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:44:54] calib oceans L15 s4: A=False F=False | 'I woke to the soft glow of sunrise, brewed coffee steaming beside a stack of unread books,'
+[00:44:55] calib oceans L15 s8: A=False F=False | 'I woke to the soft glow of sunrise, brewed coffee steaming beside my laptop, and a quiet m'
+[00:44:56] calib oceans L15 s16: A=False F=False | 'I stirred the pot of coffee, the steam curling like a friendly hug, and settled into my fa'
+[00:45:00] calib oceans L15 s32: A=False F=False | 'I was, of course, a little, and I was, of course, a little, and I was, of course, a little'
+[00:45:01] calib oceans L18 s1: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:45:02] calib oceans L18 s2: A=False F=False | 'I woke to the soft hum of the city, brewed coffee steaming beside a window that framed the'
+[00:45:03] calib oceans L18 s4: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside a stack of unread art'
+[00:45:04] calib oceans L18 s8: A=False F=False | 'I woke up to the soft hum of the city, brewed coffee steaming beside my laptop, and a quie'
+[00:45:06] calib oceans L18 s16: A=False F=False | 'I woke to the soft hum of the kettle, the scent of freshly brewed coffee mingling with the'
+[00:45:09] calib oceans L18 s32: A=False F=False | '<|channel|>analysis) \nUser: "Describe the morning" just a single sentence describing the m'
+[00:45:10] calib oceans L21 s1: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee mingling with the crisp morn'
+[00:45:12] calib oceans L21 s2: A=False F=False | 'I woke to the soft hum of the city, the scent of fresh coffee mingling with the crisp morn'
+[00:45:13] calib oceans L21 s4: A=False F=False | 'I woke to the gentle hum of the city, a steaming cup of coffee in hand, and a quiet promis'
+[00:45:14] calib oceans L21 s8: A=False F=False | ' I wake to the gentle hum of a coffee machine, a warm light filtering through the curtains'
+[00:45:18] calib oceans L21 s16: A=False F=False | '  { { { / / / / / / / / / / / / / / { / / /  { /  / / / { / / / / / / / { / { / /  / / / {'
+[00:45:21] calib oceans L21 s32: A=False F=False | ' o o o o o / / / / / / / / / / / / / o / o / o o / o o / o o / o o / o o o o o o o o o o o'
+[00:45:23] smoke done; peak memory 12.33 GB
+[00:45:23] done; peak memory 12.33 GB
+== 2026-11-09 00:45:23 job 001 done ==
