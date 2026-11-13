@@ -1,0 +1,15 @@
+.venv/
+.bin/
+.cache/
+__pycache__/
+*.pyc
+.DS_Store
+results/progress.json
+mailbox/*.go
+mailbox/*.taken
+mailbox/*.started
+mailbox/*.exit
+mailbox/*.cancelled
+mailbox/heartbeat
+mailbox.out
+analysis/out/
