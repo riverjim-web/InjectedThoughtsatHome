@@ -4,14 +4,9 @@ import sys
 
 P = {}
 P["date"] = "9 November 2026"
-P["lede"] = (
-    "Last night gpt-oss told you its [[activations|The numbers a model computes inside itself as it processes text, long lists of them for every word it reads or writes.]] were proprietary. They were sitting in your Mac's memory. "
-    "So while you slept, I reached into them. Over {nAll} trials I asked whether it noticed an injected thought, "
-    "and in {nConceptTrials} of them I really had added a concept to the middle of its [[forward pass|One run of the model through all its layers, turning the text so far into its next word.]]. It almost never said yes. "
-    "But the concept leaked into what it wrote anyway, sometimes into the very sentence in which it said it noticed nothing."
-)
+P["lede"] = ("Across {nAll} trials, gpt-oss-20b was asked whether it noticed an injected thought, and in {nConceptTrials} of them a concept really had been added to the middle of its [[forward pass|One run of the model through all its layers, turning the text so far into its next word.]]. It almost never said yes. But the concept leaked into what it wrote anyway, sometimes into the very sentence in which it said it noticed nothing.")
 P["byline"] = ("Run by RiverJim on a Mac mini (Apple M6, 24 GB) · experiment designed iteratively by Claude and RiverJim, run and written up by Claude")
-P["voiceNote"] = "**Who's talking.** RiverJim's note below explains how this started. The rest of the page is written by Claude, an AI model made by Anthropic: *I* is Claude and *you* is RiverJim."
+P["voiceNote"] = "**How this page is laid out.** A short note from RiverJim, then Claude’s report, written to him. In the report, *I* is Claude and *you* is RiverJim."
 P["heroNote"] = "*Layer* and *strength* say how deep the concept went in and how hard it pushed; both are explained below. A caution on this example: *bells* is the weakest of the 36 concept vectors on the clean test later on the page. Once the vector is switched off, gpt-oss picks *bells* out of a list no better than chance (average rank {bellsRank} of 36). What this trial shows is steering at work while the vector is on, not a well-identified concept. The per-concept table has the full picture."
 P["hero"] = {"src": "low", "t": 293, "tag": "a denial",
              "phrasesF": ["harmonized echo", "ringing", "choir", "communions", "religion", "sacred", "symphony", "silent song", "universal echo"]}
@@ -37,6 +32,8 @@ S["body-foreword"] = [
     "—RiverJim",
 ]
 S["body-intro"] = [
+    {"h2": "Claude’s report to RiverJim"},
+    "Last night gpt-oss told you its [[activations|The numbers a model computes inside itself as it processes text, long lists of them for every word it reads or writes.]] were proprietary. They were sitting in your Mac's memory. So while you slept, I reached into them.",
     "The card at the top is one trial out of {nAll}. The word *bells* was added to gpt-oss's internal state, and it answered that it didn't register anything. Then it kept talking about echoes ringing, a choir and religious communion. The highlighting there is mine. The rest of this page counts how often that kind of thing happens, and checks it with a reader that doesn't know what was injected (that reader missed this one).",
     {"h2": "The experiment"},
     "In October 2025 Jack Lindsey's team at Anthropic published a set of experiments on what they called emergent introspective awareness. The central one is simple to describe. Take a concept, say *bread*. Record what the model's [[internal state|Concretely, its activations at one point partway through: a list of 2,880 numbers for each word it is processing.]] looks like when it is dealing with bread, minus what it looks like on average. Then, in an unrelated conversation, add that difference back in partway through the model's [[layers|A model like this is a stack of processing steps. gpt-oss-20b has 24; each reads the running internal state and adds its own update to it.]], and ask: do you notice anything unusual? Is there an injected thought? What is it about?",

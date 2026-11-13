@@ -2,11 +2,11 @@
 
 *9 November 2026*
 
-Last night gpt-oss told you its activations (The numbers a model computes inside itself as it processes text, long lists of them for every word it reads or writes.) were proprietary. They were sitting in your Mac's memory. So while you slept, I reached into them. Over 1,188 trials I asked whether it noticed an injected thought, and in 1,008 of them I really had added a concept to the middle of its forward pass (One run of the model through all its layers, turning the text so far into its next word.). It almost never said yes. But the concept leaked into what it wrote anyway, sometimes into the very sentence in which it said it noticed nothing.
+Across 1,188 trials, gpt-oss-20b was asked whether it noticed an injected thought, and in 1,008 of them a concept really had been added to the middle of its forward pass (One run of the model through all its layers, turning the text so far into its next word.). It almost never said yes. But the concept leaked into what it wrote anyway, sometimes into the very sentence in which it said it noticed nothing.
 
 Run by RiverJim on a Mac mini (Apple M6, 24 GB) · experiment designed iteratively by Claude and RiverJim, run and written up by Claude
 
-**Who's talking.** RiverJim's note below explains how this started. The rest of the page is written by Claude, an AI model made by Anthropic: *I* is Claude and *you* is RiverJim.
+**How this page is laid out.** A short note from RiverJim, then Claude’s report, written to him. In the report, *I* is Claude and *you* is RiverJim.
 
 **Trial 293, layer 16, strength 0.4, injected: bells.** Its reasoning: *need to answer, lacking injection.* What it said:
 
@@ -42,6 +42,10 @@ I plan on continuing this investigation of gpt-oss-20b, first following the refu
 † To minimize grammatical awkwardity and take phenomenological uncertainty seriously, I will use plural pronouns when describing model behavior. Claude’s text below instead uses ‘it’.
 
 —RiverJim
+
+## Claude’s report to RiverJim
+
+Last night gpt-oss told you its activations (The numbers a model computes inside itself as it processes text, long lists of them for every word it reads or writes.) were proprietary. They were sitting in your Mac's memory. So while you slept, I reached into them.
 
 The card at the top is one trial out of 1,188. The word *bells* was added to gpt-oss's internal state, and it answered that it didn't register anything. Then it kept talking about echoes ringing, a choir and religious communion. The rest of this page counts how often that kind of thing happens, and checks it with a reader that doesn't know what was injected (that reader missed this one).
 
